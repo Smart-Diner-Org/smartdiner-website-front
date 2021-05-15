@@ -1,0 +1,84 @@
+.ordersList{
+	font-size: 14px;
+}
+.mt-10{
+  margin-top: 10px;
+}
+.ml-10{
+  margin-left: 10px;
+}
+.float-left{
+	float: left;
+}
+.float-right{
+	float: right;
+}
+.ordersBtn{
+	display: block;
+    height: calc(2.25rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-s
+}
+.redBtn{
+	background-color: #e22a28;
+}
+.greenBtn{
+	background-color: #08a860;
+}
+.yellowBtn{
+	background-color: #ffc009;
+}
+
+button.active {
+    background-color: #000000;
+    border-color: #000000;
+    color: #fff;
+}
+
+.pt-5per{
+	padding-top: 5%;
+}
+
+table{
+	padding-top: 2%;
+	width: 100%;
+}
+table tr{
+	margin-top: 10px;
+}
+table tr th {
+	
+	word-break: break-word;
+	height: 100px;
+    text-align: start;
+    padding-right: 10px;
+}
+table tr td {
+	
+	word-break: break-word;
+	padding-right: 2%;
+	text-align: start;
+}
+.with15per{
+	width: 15%;
+}
+.with18per{
+	width: 18%;
+}
+.with10per{
+	width: 10%;
+}
+.with19per{
+	width: 19%;
+}
+.bg-color-light-grey{
+	background-color: lightgrey;
+}

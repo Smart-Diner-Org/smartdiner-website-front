@@ -1,0 +1,493 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=MuseoModerno:wght@700&display=swap");
+
+.admin-header {
+  width: 100%;
+  position: fixed;
+  background-color: white;
+  padding: 20px 0px;
+  top: 0;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  object-fit: contain;
+}
+
+.admin-header img {
+  max-height: 40px;
+  width: 40px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+.admin-header label {
+  color: "#000466";
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "MuseoModerno";
+}
+
+.panelTab {
+  width: inherit;
+  background-color: white;
+  padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.panelTab button {
+  width: 200px;
+  height: 60px;
+  border: none;
+  color: white !important;
+  font-size: 16px;
+  padding: 10px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+@media only screen and (max-width: 915px) {
+  .panelTab button {
+    width: 180px;
+  }
+}
+@media only screen and (max-width: 820px) {
+  .panelTab button {
+    width: 150px;
+  }
+}
+.panelTab button p {
+  font-family: "MuseoModerno" !important;
+  padding: 0;
+  text-align: start;
+}
+
+.out-line {
+  outline: 2px solid #000466;
+  outline-offset: 6px;
+}
+
+.panelTab label {
+  background-color: white;
+  color: #000466 !important;
+  height: 100%;
+  padding: 5px;
+  text-align: center;
+  max-width: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  font-family: "MuseoModerno";
+}
+
+.order-panel {
+  position: relative;
+  top: 0px;
+  height: calc(100vh - 260px);
+  padding: 20px;
+  width: 100%;
+  background-color: #000466;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  overflow-x: auto;
+  overflow-y: scroll;
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+}
+.order-panel::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+.order-panel::-webkit-scrollbar-track {
+  background: none;
+}
+
+/* Handle */
+.order-panel::-webkit-scrollbar-thumb {
+  background: #ffc009;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.order-panel::-webkit-scrollbar-thumb:hover {
+  background: #ffc009;
+  border-radius: 10px;
+}
+
+.sort-filter-container {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  max-height: 60px;
+  margin-bottom: 10px;
+}
+.sort-filter {
+  width: auto;
+  background-color: white;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+.sort-filter input {
+  width: 150px;
+  margin: 10px 20px;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+.sort-filter .vertical-line {
+  margin-left: 2px;
+  border-left: 5px solid #000466;
+}
+
+.sort-filter p {
+  font-size: 16px;
+  font-family: "MuseoModerno";
+  color: #000466;
+  cursor: pointer;
+  margin: 10px 20px;
+}
+
+.sort-filter .showAll {
+  font-size: 16px;
+  color: #08a860;
+  background-color: transparent;
+  border: none;
+}
+.sort-filter .showAll:hover {
+  color: #08a860 !important;
+  text-decoration-line: underline;
+  -moz-text-decoration-line: underline;
+  text-decoration-color: #ffc009;
+  -moz-text-decoration-color: #ffc009;
+}
+
+.sort-filter .preOrder {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fb8238;
+  background-color: transparent;
+  border: none;
+}
+.sort-filter .preOrder:hover {
+  color: #fb8238 !important;
+  text-decoration-line: underline;
+  -moz-text-decoration-line: underline;
+  text-decoration-color: #08a860;
+  -moz-text-decoration-color: #08a860;
+}
+.order-card,
+.order-card-mobile {
+  background-color: white;
+  color: #000466;
+  margin: 10px 5px;
+  padding-top: 10px;
+  font-size: 18px;
+  height: auto;
+  width: 250px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 1);
+  transition: box-shadow 0.2s ease-out;
+  -webkit-transition: box-shadow 0.2s ease-out;
+  -moz-transition: box-shadow 0.2s ease-out;
+  -ms-transition: box-shadow 0.2s ease-out;
+  -o-transition: box-shadow 0.2s ease-out;
+}
+.order-card .paid,
+.order-card-mobile .paid {
+  font-family: "MuseoModerno" !important;
+  color: #08a860;
+  font-size: 14px;
+}
+.pre-order {
+  font-size: 14px;
+  text-align: center;
+  color: #e22a28;
+  border: 1px solid #e22a28;
+  border-radius: 8px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  padding: 0 5px;
+  margin-right: 5px;
+  margin-top: 5px;
+  max-height: 25px;
+}
+
+.selected {
+  height: 6px;
+  width: inherit;
+  background-color: #000466;
+}
+.order-card:hover {
+  cursor: pointer;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 1);
+}
+
+.old-order {
+  background-color: white;
+  padding: 10px;
+  height: auto;
+  width: 80vw;
+  display: flex;
+  color: #000466;
+  margin-top: 20px;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+.footer {
+  width: 100%;
+  background-color: #fff;
+  position: fixed;
+  padding: 20px 0px;
+  bottom: 0;
+  box-shadow: 0px -3px 5px rgba(0, 0, 0, 0.2);
+  z-index: 15;
+  object-fit: contain;
+  display: flex;
+}
+
+.footer img {
+  height: 30px;
+}
+
+.footer label {
+  color: #000466;
+  font-size: 14px;
+  font-family: "MuseoModerno";
+  font-weight: bold;
+}
+
+.footer a,
+.footer a:hover {
+  color: #000466;
+  font-size: 14px;
+  text-decoration: underline;
+  text-decoration-color: #ffc009;
+  -moz-text-decoration-color: #ffc009;
+}
+
+.adminPanel-mob-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  padding-bottom: 30px;
+}
+.adminPanel-mob-header .toggle_icon {
+  cursor: pointer;
+  position: relative;
+  height: 20px;
+  width: 30px;
+  left: 10px;
+}
+.adminPanel-mob-header .toggle_icon span {
+  height: 4px;
+  width: 15px;
+  border-radius: 8px;
+  background: #000466;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+.adminPanel-mob-header .toggle_icon span:before {
+  content: "";
+  height: 4px;
+  width: 25px;
+  border-radius: 8px;
+  display: block;
+  background: #000466;
+  left: 0px;
+  top: 20px;
+  position: absolute;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+.adminPanel-mob-header .toggle_icon span:after {
+  content: "";
+  height: 4px;
+  width: 25px;
+  border-radius: 8px;
+  display: block;
+  background: #000466;
+  left: 0px;
+  bottom: 8px;
+  position: absolute;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+.user-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -ms-border-radius: 100px;
+  -o-border-radius: 100px;
+  background-color: #e22a28;
+  display: grid;
+  place-items: center;
+}
+.user-btn .user-icon {
+  color: white;
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.panelTabMob .side_menu .logo {
+  display: inline !important;
+}
+@media (max-width: 575px) {
+  .panelTabMob .side_menu {
+    max-width: 100%;
+    padding: 0px;
+    left: -1000px;
+  }
+}
+
+.panelTabMob .side_menu .logo img {
+  max-height: 50px !important;
+  margin: 50px;
+}
+.panelTabMob .side_menu .menu-left {
+  margin-left: 0;
+  margin-top: 20px;
+}
+.panelTabMob .side_menu_create-offline-btn {
+  position: absolute;
+  bottom: 20px;
+  left: 10px;
+  padding: 0.5em;
+  border-radius: 16px;
+  border: none;
+  background-color: white;
+  color: #000466 !important;
+}
+.panelTabMob .side_menu .orderstage-btn {
+  width: 100%;
+  height: 80px;
+  background-color: #000466;
+  border: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  text-align: start;
+  margin-top: -3px;
+}
+.panelTabMob .side_menu .orderstage-btn p {
+  font-family: "MuseoModerno" !important;
+  margin: 0 !important;
+  font-size: 1.5em;
+}
+.panelTabMob .side_menu .active {
+  background-color: white;
+  color: #000466;
+}
+
+.panelTabMob .side_menu .orderstage-btn .count-box {
+  font-size: 1.3em;
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  border: none;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  color: white;
+  font-family: "MuseoModerno" !important;
+}
+
+.panelTabMob .side_menu .hide-sideMenu-btn {
+  padding: 0.5em 1em;
+  border: 2px solid white;
+  background-color: #000466;
+  color: white;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  font-size: 14px;
+  font-family: "MuseoModerno";
+}
+.panelTabMob .side_menu .hide-sideMenu-btn i {
+  margin-right: 10px;
+  font-weight: 900;
+  font-size: 20px;
+}
+
+.wrapper .order-panel-mob-view {
+  height: auto;
+  padding-bottom: 30px;
+  overflow-y: auto;
+}
+
+.order-card-mobile {
+  margin: 10px 20px 40px 20px;
+  border: 1px solid;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  box-shadow: 0 1px 6px rgba(0, 4, 102, 0.4), 0 1px 12px rgba(0, 4, 102, 0.3);
+  width: auto;
+}
+
+.admin-header .btn-primary,
+.admin-header .btn,
+.adminPanel-mob-header .btn-primary,
+.adminPanel-mob-header .btn,
+.btn-primary:not(:disabled):not(.disabled).active,
+.btn-primary:not(:disabled):not(.disabled):active,
+.show > .btn-primary.dropdown-toggle {
+  padding: 0px;
+  background-color: transparent !important;
+  border: 0px !important;
+}
+.btn-primary.focus,
+.btn-primary:focus {
+  box-shadow: none !important;
+}
+
+.admin-header .dropdown-toggle::after,
+.adminPanel-mob-header .dropdown-toggle::after {
+  content: none !important;
+}
+
+.adminPanel-mob-header a,
+.admin-header a {
+  color: #000466;
+}

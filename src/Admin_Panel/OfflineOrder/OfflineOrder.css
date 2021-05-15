@@ -1,0 +1,449 @@
+.offline_order{
+  margin-top: 30px;
+}
+.offline-order-form {
+  margin: 30px 0px;
+  flex-wrap: wrap;
+}
+
+.modal-content {
+  padding: 0px 20px;
+  border: none;
+}
+
+.modal-content .modal-header h4,
+.modal-content .modal-header h6 {
+  color: #000466;
+  margin: 0.5em 0;
+}
+.modal-header .close {
+  align-self: center;
+  color: #e22a28;
+}
+.modal-body input[type="checkbox"] {
+  margin-right: 1em;
+}
+.modal-body label {
+  color: #000466;
+}
+.modal-body .continue-btn {
+  padding: 0.25em 1em;
+  border: 1px solid #000466;
+  background-color: #000466;
+  color: white;
+  margin: 1em;
+  font-family: "MuseoModerno";
+}
+
+@media only screen and (max-width: 768px) {
+  .modal-body .total-quantity {
+    width: 30px;
+  }
+  .modal-body h5 {
+    font-size: 19px;
+  }
+}
+
+/* Pop Up Ends here */
+
+.search-bar {
+  margin-left: auto;
+  max-height: 3em;
+  padding: 0.25em;
+  display: flex;
+  align-self: center;
+  align-items: center;
+  border: 1px solid #000466;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+.search-bar:focus-within {
+  width: 50%;
+}
+.search-bar input {
+  border: none;
+  width: 90%;
+}
+.search-bar input:focus {
+  outline: none;
+}
+
+.offline-order-form input {
+  width: 300px;
+  padding: 0.25em 1em;
+  margin: 0.25em;
+  border: 1px solid #000466;
+  color: #000;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+
+.offline-order-form input:focus {
+  outline: none;
+}
+
+@media (max-width: 767px) {
+  .product-area {
+    padding-top: 50px;
+    padding-bottom: 80px;
+  }
+}
+
+.collection-tilte {
+  font-size: 46px;
+  font-weight: 900;
+  /* margin: 0px 30px 0px 30px; */
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .collection-tilte {
+    font-size: 20px;
+    padding: 15px 10px;
+  }
+}
+
+@media (max-width: 767px) {
+  .collection-tilte {
+    font-size: 20px;
+    padding: 20px 15px;
+  }
+}
+
+.collection-menu .nav button {
+  border: 1px solid #ddd;
+  border-radius: 50px;
+  margin-top: 20px;
+  line-height: 58px;
+  background-color: #fff;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 600;
+  color: #777;
+  -webkit-transition: all 0.4s ease-out 0s;
+  -moz-transition: all 0.4s ease-out 0s;
+  -ms-transition: all 0.4s ease-out 0s;
+  -o-transition: all 0.4s ease-out 0s;
+  transition: all 0.4s ease-out 0s;
+}
+
+.collection-menu .nav button:focus {
+  outline: none;
+}
+.menu-dropdown {
+  width: 70%;
+  padding: 10px 5px;
+  margin: 20px;
+  border: 1px solid #ddd;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: 600;
+  color: black;
+}
+.menu-dropdown:focus {
+  outline: none;
+}
+.menu-dropdown option {
+  border-radius: 50px;
+}
+
+.mobile {
+  display: none;
+  width: 100%;
+  background-color: white;
+  z-index: 99;
+}
+.sticky {
+  top: 0;
+  width: 100vw;
+  right: 0;
+  position: fixed;
+  box-shadow: 0px 40px 40px 0px rgba(156, 156, 156, 0.25);
+  z-index: 999;
+}
+.desktop-sticky {
+  position: fixed;
+  top: auto;
+  width: 19.2%;
+  max-width: 262.5px;
+}
+.desktop-sticky-top {
+  top: 100px;
+}
+.desktop-sticky-bottom {
+  bottom: 10px;
+}
+
+.desktop-rel {
+  position: relative;
+  width: 100%;
+  top: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .desktop {
+    display: none !important;
+  }
+  .mobile {
+    display: flex;
+    justify-content: center;
+  }
+}
+/*---------*/
+.checkout-button button {
+  width: 100%;
+  height: 50px;
+  display: none;
+  background-color: #000466;
+  color: #f7f7ff;
+  position: fixed;
+  bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-shadow: 2px 10px rgba(0, 0, 0, 0.2);
+  font-family: "MuseoModerno";
+}
+
+@media only screen and (max-width: 768px) {
+  .checkout-button button {
+    display: inline-block;
+  }
+}
+
+/*------*/
+
+.collection-menu .nav button.active {
+  background-color: black;
+  border-color: black;
+  color: #fff;
+}
+
+.single-product-items .product-item-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.single-product-items .product-item-image a {
+  display: block;
+}
+
+.single-product-items .product-item-image img {
+  width: 100%;
+  -webkit-transition: all 0.4s ease-out 0s;
+  -moz-transition: all 0.4s ease-out 0s;
+  -ms-transition: all 0.4s ease-out 0s;
+  -o-transition: all 0.4s ease-out 0s;
+  transition: all 0.4s ease-out 0s;
+}
+
+.single-product-items .product-item-image .product-discount-tag {
+  width: 100px;
+  height: 25px;
+  background-color: white;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  text-align: center;
+  border-radius: 20px;
+  border: 2px solid;
+}
+
+.single-product-items .product-item-image .product-discount-tag p {
+  color: black;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 22px;
+}
+
+.single-product-items .product-item-content .product-title a {
+  font-size: 20px;
+  margin: 5px 2px 5px 0;
+  height: 50px;
+  color: #333;
+  -webkit-transition: all 0.4s ease-out 0s;
+  -moz-transition: all 0.4s ease-out 0s;
+  -ms-transition: all 0.4s ease-out 0s;
+  -o-transition: all 0.4s ease-out 0s;
+  transition: all 0.4s ease-out 0s;
+}
+
+.single-product-items .product-item-content .product-title a:hover {
+  color: #000000;
+}
+
+.single-product-items .description {
+  margin: 5px 0;
+}
+
+.single-product-items .product-item-content .info-icon {
+  color: white;
+  background-color: black;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 4px 8px;
+  margin: 5px 0;
+  max-height: 22px;
+  max-width: 22px;
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+}
+
+.single-product-items .product-item-content .rating li {
+  color: #fc924b;
+  font-size: 12px;
+  display: inline-block;
+}
+
+.single-product-items .product-item-content span {
+  margin: 5px 3px;
+  font-size: 20px;
+  font-weight: 600;
+  position: relative;
+}
+
+.single-product-items .product-item-content .discount-price {
+  color: #000000;
+}
+
+.single-product-items .product-item-content .regular-price {
+  color: #c4c4c4;
+}
+
+.single-product-items .product-item-content .discount-price::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: #222;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.single-product-items:hover .product-item-image img {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.tab-content .tab-pane {
+  display: block;
+  overflow: hidden;
+  height: 0;
+  visibility: hidden;
+  max-width: 100%;
+  opacity: 0;
+}
+
+.tab-content .tab-pane.active {
+  height: auto;
+  visibility: visible;
+  opacity: 1;
+  overflow: visible;
+}
+
+.menu-price-list-dropdown {
+  padding: 3px 15px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  color: #777;
+  border-color: #000;
+  font-weight: 600;
+}
+.menu-price-list-dropdown:focus {
+  outline: none;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .menu-price-list-dropdown {
+    padding: 3px 1px;
+    width: 90%;
+    font-size: 12px;
+  }
+}
+
+.button-round {
+  color: black;
+  background-color: transparent;
+  border: 1px solid black;
+  border-radius: 50%;
+
+  padding: 0px 7.5px 0px 7.5px;
+  border-top: 0px;
+  border-bottom: 0px;
+}
+.button-round:hover {
+  color: black;
+}
+.button-round:focus {
+  outline: none;
+}
+.total-quantity {
+  width: 50px;
+  border: 0px solid black;
+  text-align: center;
+  background-color: transparent;
+  pointer-events: none;
+}
+
+.offline-order-footer {
+  padding: 5px 30px;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  max-height: 80px;
+  z-index: 99;
+  box-shadow: 0px -3px 5px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.offline-order-footer a {
+  margin: 0px 30px;
+  color: #000466;
+}
+.offline_order .order-button,
+.modal-content .order-button {
+  color: #000466;
+  background-color: white;
+  border: 1px solid #000466;
+  font-family: "MuseoModerno";
+}
+.offline_order .order-button:hover,
+.modal-content .order-button:hover {
+  color: white;
+  background-color: #000466;
+  border: 1px solid #000466;
+  font-family: "MuseoModerno";
+}
+
+@media screen and (max-width: 504px) {
+  .offline-order-footer a {
+    margin: 0px 20px;
+  }
+}

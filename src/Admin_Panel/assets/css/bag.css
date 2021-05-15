@@ -1,0 +1,278 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=MuseoModerno:wght@700&display=swap");
+
+/* Bag CSS */
+
+.btn-green {
+  font-family: "MuseoModerno" !important;
+  background-color: #08a860 !important;
+  color: white !important;
+}
+
+.btn-yellow {
+  font-family: "MuseoModerno" !important;
+  background-color: #ffc009 !important;
+  color: white !important;
+}
+
+.bag-component {
+  position: absolute;
+  width: 37%;
+  height: 100vh;
+  right: 0;
+  background-color: white;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  z-index: 10;
+  border-left: 2px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 20px #333;
+}
+
+@media screen and (max-width: 991px) {
+  .bag-component {
+    width: 47%;
+  }
+}
+
+* button {
+  cursor: pointer;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.bag-component::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.bag-component {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.bag-header {
+  margin: 5px;
+  padding: 10px;
+  margin-top: 80px;
+}
+@media screen and (max-width: 791px) {
+  .bag-component {
+    width: 100%;
+  }
+  .bag-header {
+    margin-top: 10px;
+  }
+}
+.bag-header label {
+  color: #000466;
+  font-family: "MuseoModerno";
+  margin: 10px;
+}
+.bag-close {
+  border: 1px solid;
+  color: #e22a28;
+  padding: 5px 10px;
+  border-color: #e22a28;
+  border-radius: 5px;
+  background-color: transparent;
+}
+
+.bag-item {
+  margin: 5px;
+  padding: 10px 10px;
+  border: 1px solid #000466;
+  border-radius: 12px;
+}
+
+.image-container {
+  height: 100px;
+  width: inherit;
+  display: flex;
+  align-items: centre;
+  border-radius: 8px;
+  object-fit: contain;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+.bag-item img {
+  width: inherit;
+  height: 100%;
+  border-radius: 12px;
+}
+
+.des .itemname {
+  color: #000466;
+  font-family: "MuseoModerno";
+  font-size: 1em;
+}
+.des .containment {
+  color: #b1b1b1;
+  font-family: "Lato";
+  font-size: 0.75em;
+}
+
+.price-display {
+  color: #000466;
+  font-family: "MuseoModerno";
+  font-size: "1.125em";
+}
+.offer-applied {
+  font-size: 0.875em;
+  color: #b1b1b1;
+  font-family: "Lato";
+}
+.disc-price {
+  color: #ffc009;
+  font-family: "MuseoModerno";
+  font-size: "1.125em";
+  text-decoration: line-through;
+}
+
+.quantity {
+  color: #000466;
+  font-family: "MuseoModerno";
+  font-size: 1em;
+  border: 1px solid #000466;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  max-width: 40px !important;
+  height: 40px;
+}
+
+.quantity label {
+  width: 3em;
+  margin-bottom: 0;
+  font-family: "Lato";
+}
+.cancelbutton {
+  border: none;
+  color: #e22a28 !important;
+  background-color: white !important;
+  font-size: 1em;
+}
+.bag-close:hover {
+  color: #e22a28 !important;
+}
+
+.top-up button {
+  margin: 1%;
+  width: 150px;
+  height: 30px;
+  border-radius: 20px;
+  background-color: white;
+  color: #000466;
+  font-size: 0.625em;
+  font-family: "MuseoModerno";
+}
+
+.top-up button:active {
+  background-color: #000466;
+  color: white;
+  border: none;
+}
+
+.bill-container a {
+  font-size: 1em;
+  font-family: "MuseoModerno";
+  color: #000466;
+  text-decoration: underline;
+  -webkit-text-decoration-color: #ffc009; /* safari still uses vendor prefix */
+  text-decoration-color: #ffc009;
+}
+
+.delivery-type {
+  margin-top: 3em;
+  margin-bottom: 3em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.delivery-type button {
+  width: 250px;
+  height: 50px;
+  font-size: 1.25em;
+  font-family: "MuseoModerno";
+  color: white;
+  background-color: #ffc009;
+  border: none;
+  margin-bottom: 10px;
+}
+
+.bill-container {
+  padding: 10px 10px 10px 10px;
+  font-size: 1em;
+  font-family: "Lato";
+  color: #000466;
+}
+
+.customer-details {
+  padding: 10px 10px 10px 10px;
+  font-size: 1em;
+  line-height: 0.5;
+  font-family: "Lato";
+  color: #000466;
+}
+.final-bill {
+  display: flex;
+  flex-direction: row;
+  font-family: "Lato";
+  color: #000466;
+}
+
+.final-bill input {
+  border-color: #000466;
+  border-radius: 5px;
+  height: 2em;
+  margin: 0px 10px 0px 10px;
+  padding: 0px 10px;
+}
+
+.final-bill button {
+  font-size: 0.875em;
+  border: none;
+  background-color: #000466;
+  border-radius: 5px;
+  color: white;
+  margin: 0px 2px 0px 2px;
+  padding: 5px 20px;
+}
+
+.total-amount {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  text-align: right;
+}
+.total-amount span {
+  font-size: 1.2em;
+  padding-left: 5px;
+  font-family: "MuseoModerno";
+}
+
+@media screen and (max-width: 78em) {
+  .image-container {
+    height: 80px;
+  }
+
+  .des .itemname {
+    font-size: 0.75em;
+  }
+  .containment {
+    font-size: 0.5em;
+  }
+
+  .price-display {
+    font-size: 0.75em;
+  }
+  .offer-applied {
+    font-size: 0.5em;
+  }
+  .top-up {
+    font-size: 0.8em;
+  }
+}

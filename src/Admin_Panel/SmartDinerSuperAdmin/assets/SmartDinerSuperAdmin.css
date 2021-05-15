@@ -1,0 +1,319 @@
+.smartdiner-superadmin-home {
+  padding-top: 80px;
+}
+@media only screen and (max-width: 769px) {
+  .smartdiner-superadmin-home {
+    padding-top: 0;
+  }
+}
+
+.create-restaurant {
+  padding: 30px;
+}
+.create-restaurant .create-restaurant-form {
+  background-color: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 16px;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  -ms-border-radius: 16px;
+  -o-border-radius: 16px;
+  padding: 10px;
+}
+
+.create-restaurant .create-restaurant-form .add-customer h2 {
+  margin: 10px 0 20px 0;
+}
+.create-restaurant .create-restaurant-form .add-customer h4 {
+  margin: 30px 0;
+}
+.create-restaurant .create-restaurant-form .add-customer input,
+.create-restaurant .create-restaurant-form .add-customer textarea {
+  color: black;
+  font-size: 16px;
+  margin-top: 10px !important;
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  padding: 0.2em 0.5em;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  width: inherit;
+  text-transform: capitalize;
+}
+.create-restaurant .create-restaurant-form .add-customer input:focus {
+  outline: none;
+}
+
+.create-restaurant .create-restaurant-form .add-customer select {
+  padding: 0.25em 0.5em;
+  margin: 30px auto;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+.create-restaurant .create-restaurant-form .add-customer .next-btn,
+.theme-select .next-btn {
+  background-color: #000466;
+  color: white;
+  font-family: "MuseoModerno";
+  margin: 20px auto;
+}
+@media only screen and (max-width: 915px) {
+  .create-restaurant .create-restaurant-form .add-customer .next-btn,
+  .theme-select .next-btn {
+    align-self: center;
+  }
+  .create-restaurant .create-restaurant-form .add-customer .add-new-branch-btn {
+    margin-right: 10px;
+  }
+}
+.create-restaurant
+  .create-restaurant-form
+  .add-customer
+  .timings-table
+  table
+  input[type="time"] {
+  margin: 0 3px 3px 0 !important;
+  padding: 0.25em;
+}
+@media only screen and (max-width: 375px) {
+  .create-restaurant
+    .create-restaurant-form
+    .add-customer
+    .timings-table
+    table
+    input[type="time"] {
+    padding: 0.25em 0.01em;
+    font-size: 14px;
+  }
+}
+
+.create-restaurant
+  .create-restaurant-form
+  .add-customer
+  .timings-table
+  .table
+  td {
+  padding: 0.3rem !important;
+}
+
+@media only screen and (max-width: 340px) {
+  .create-restaurant
+    .create-restaurant-form
+    .add-customer
+    .timings-table
+    table
+    th,
+  .create-restaurant
+    .create-restaurant-form
+    .add-customer
+    .timings-table
+    table
+    td {
+    max-width: 70px;
+  }
+  .create-restaurant
+    .create-restaurant-form
+    .add-customer
+    .timings-table
+    tr
+    td:first-child {
+    display: grid;
+    word-break: break-all;
+  }
+  .create-restaurant
+    .create-restaurant-form
+    .add-customer
+    .timings-table
+    table
+    input[type="time"] {
+    font-size: 12px;
+  }
+}
+.create-restaurant
+  .create-restaurant-form
+  .add-customer
+  .timings-table
+  table
+  select {
+  margin: 0;
+  display: inherit;
+  max-width: 55px;
+  padding: 0.25em;
+}
+.create-restaurant
+  .create-restaurant-form
+  .add-customer
+  .timings-table
+  table
+  input[type="checkbox"] {
+  margin: 0 3px 0 0 !important;
+  max-width: 55px;
+  height: 35px;
+  padding: 0.25em;
+}
+
+.create-restaurant .create-restaurant-form .add-customer #upload-logo {
+  border: none;
+  white-space: pre-line;
+}
+@media only screen and (max-width: 915px) {
+  .create-restaurant .create-restaurant-form .add-customer #upload-logo {
+    font-size: 15px;
+  }
+}
+.create-restaurant .create-restaurant-form .add-customer img {
+  width: 120px;
+  height: 120px;
+  margin: 10px;
+  margin-bottom: 30px;
+}
+.create-restaurant .create-restaurant-form .theme-select .card {
+  margin: 30px auto;
+  display: flex;
+}
+.create-restaurant .create-restaurant-form span {
+  margin-left: auto;
+  font-family: "Lato";
+  font-size: 14px;
+}
+.create-restaurant .create-restaurant-form span:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.create-restaurant .create-restaurant-form .theme-select .card .card-img-top {
+  object-fit: contain;
+  height: inherit;
+}
+.create-restaurant
+  .create-restaurant-form
+  .theme-select
+  .card
+  .card-img-top:hover {
+  cursor: pointer;
+}
+
+#selected-template-for-view {
+  max-width: 100%;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.create-restaurant .create-restaurant-form .add-customer input[type="color"] {
+  width: 40px !important;
+  padding: 0px;
+  height: 40px;
+  border: 0;
+  margin-top: 0 !important;
+  margin-left: 5px;
+}
+.create-restaurant .create-restaurant-form .website-options h4 {
+  margin: 30px 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  transition: opacity 0.4s ease-in-out;
+  -webkit-transition: opacity 0.4s ease-in-out;
+  -moz-transition: opacity 0.4s ease-in-out;
+  -ms-transition: opacity 0.4s ease-in-out;
+  -o-transition: opacity 0.4s ease-in-out;
+}
+@media only screen and (max-width: 800px) {
+  .create-restaurant .create-restaurant-form .website-options h4 {
+    margin: 20px 0;
+  }
+}
+.create-restaurant .create-restaurant-form .website-options select {
+  padding: 0.25em 0.5em;
+  margin: 0 0 0 10px;
+  border-radius: 8px;
+  font-family: "Lato";
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  font-size: 16px;
+}
+@media only screen and (max-width: 800px) {
+  .create-restaurant .create-restaurant-form .website-options select {
+    margin: 10px 0 0 5px;
+  }
+}
+.create-restaurant .create-restaurant-form .slider-image-content span {
+  margin-top: 10px !important;
+}
+.create-restaurant .create-restaurant-form .slider-image-content input {
+  margin-top: 0px !important;
+  margin-left: 5px;
+  width: 100%;
+}
+
+.create-restaurant .create-restaurant-form .product-details h4 ul {
+  border-right: 5px solid #08a860;
+}
+
+.create-restaurant
+  .create-restaurant-form
+  .product-details
+  h4
+  ul
+  .category-list {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  cursor: pointer;
+  text-transform: capitalize;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+}
+.create-restaurant
+  .create-restaurant-form
+  .product-details
+  h4
+  ul
+  .selected-category {
+  color: white;
+  background-color: #000466;
+}
+
+.create-restaurant
+  .create-restaurant-form
+  .product-details
+  .category-section
+  select {
+  display: none;
+}
+
+@media (max-width: 769px) {
+  .create-restaurant
+    .create-restaurant-form
+    .product-details
+    .category-section
+    ul {
+    display: none;
+  }
+  .create-restaurant
+    .create-restaurant-form
+    .product-details
+    .category-section
+    select {
+    display: inline-block;
+  }
+}
