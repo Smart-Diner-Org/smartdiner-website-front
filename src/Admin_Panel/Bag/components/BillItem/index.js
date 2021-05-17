@@ -50,9 +50,9 @@ class BillItem extends Component {
               {this.props.discount > 0 ? (
                 <>
                   <h3 className="offer-applied">
-                    {((this.props.price - this.props.discountPrice) /
+                    {(((this.props.price - this.props.discountPrice) /
                       this.props.price) *
-                      100}
+                      100).toFixed()}
                     % OFFER APPLIED
                   </h3>
                 </>

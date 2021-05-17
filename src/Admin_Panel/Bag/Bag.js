@@ -4,9 +4,18 @@ import CustomerDetails from "./CustomerDetails";
 import Delivery from "./Delivery";
 import Bill from "./Bill";
 import "../assets/css/bag.css";
+import getPercentageFromBaseAndFinalValue from "../../helpers/CommonFunctions";
 
 class Bag extends Component {
   render() {
+
+    const [totalAfterMrpDiscount, dicountedMrpPercentage] = getPercentageFromBaseAndFinalValue(
+      this.props.total_price,
+      this.props.total_mrp_price,
+      this.props.delivery_charge,
+      this.props.gst
+    );
+
     return (
       <div
         className="bag-component pr-10 pl-10"
@@ -30,7 +39,14 @@ class Bag extends Component {
           price_details={this.props.price_details}
         />
 
-        <Bill total_price={this.props.total_price} />
+        <Bill
+          total_price={this.props.total_price}
+          total_mrp_price={this.props.total_mrp_price}
+          delivery_charge={this.props.delivery_charge}
+          gst={this.props.gst}
+          totalAfterMrpDiscount={totalAfterMrpDiscount}
+          dicountedMrpPercentage={dicountedMrpPercentage}
+        />
 
         <CustomerDetails
           preBookingDetail={this.props.preBookingDetail}

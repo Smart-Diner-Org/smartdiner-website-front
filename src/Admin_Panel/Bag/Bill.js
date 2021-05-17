@@ -8,10 +8,24 @@ class Bill extends Component {
             <div class="bill-container">
                 <hr/>
                 <div className="container">
-                    <div className="row">
+                    <div>
+                        <div className="row">
+                            <label className="col-auto mr-auto">Total MRP</label><br/>
+                            <label className="col-auto" >Rs. {this.props.total_mrp_price}</label> <br/>
+                        </div>
+                        <div className="row">
+                            <label className="col-auto mr-auto">Total after discount</label><br/>
+                            <label className="col-auto" >Rs. {this.props.totalAfterMrpDiscount}</label> <br/>
+                        </div>
+                        <div className="row">
+                            <label className="col-auto mr-auto">Discount on MRP</label><br/>
+                            <label className="col-auto" >{this.props.dicountedMrpPercentage} %</label> <br/>
+                        </div>
+                        <div className="row">
                             <label className="col-auto mr-auto">Total</label><br/>
                             <label className="col-auto" >Rs. {this.props.total_price}</label> <br/>
                         </div>
+                    </div>
                     <div className="row">
                         {/* <a className="col-auto mr-auto" href="/"  onclick="return false" >Tax Charges</a>
                         <label className="col-auto" style={{marginBottom:"5rem"}}>{`Rs 354`}</label> */}

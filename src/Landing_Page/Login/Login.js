@@ -104,6 +104,7 @@ function Login() {
           setState({ ...state, errorMessage: null });
           setState({ ...state, successMessage: res.data.message });
           localStorage.setItem("token", res.data.accessToken);
+          localStorage.setItem("profileRoleID", res.data.roleId);
           setState({
             ...state,
             canRedirectToHome: true,
