@@ -50,12 +50,19 @@ function Team() {
                   linkedin={"https://www.linkedin.com/in/karthikrajduraisamy+2/"}
                   twitter={"https://twitter.com/krajdsamy"}
                 />
+                <MemberCard
+                  name={"Harith Anand KV"}
+                  role={"Tech Intern"}
+                  photo={harith}
+                  linkedin={"https://www.linkedin.com/in/harith-anand/"}
+                  instagram={"https://www.instagram.com/harith_beckham_/"}
+                />
               </div>
             </div>
           </div>
         </section>
       </div>
-      <center><h2>Our Helping Hands</h2></center>
+      <center><h2>Other Helping Hands</h2></center>
       <div class="helper-area">
         <section class="team-area pt-120 pb-100">
           <div class="container">
@@ -84,13 +91,6 @@ function Team() {
                   photo={dharee}
                   instagram={"https://www.instagram.com/ddsohigh/"}
                   linkedin={"https://linkedin.com/in/dharanee86"}
-                />
-                <MemberCard
-                name={"Harith Anand KV"}
-                role={"Tech Intern"}
-                photo={harith}
-                linkedin={"https://www.linkedin.com/in/harith-anand/"}
-                instagram={"https://www.instagram.com/harith_beckham_/"}
                 />
               </div>
             </div>
