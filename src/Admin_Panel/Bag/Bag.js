@@ -9,11 +9,11 @@ import getPercentageFromBaseAndFinalValue from "../../helpers/CommonFunctions";
 class Bag extends Component {
   render() {
 
-    const [totalAfterMrpDiscount, dicountedMrpPercentage] = getPercentageFromBaseAndFinalValue(
+    const [totalAfterMrpDiscount, dicountedMrpPercentage, gstAmount] = getPercentageFromBaseAndFinalValue(
       this.props.total_price,
       this.props.total_mrp_price,
       this.props.delivery_charge,
-      this.props.gst
+      this.props.gstPercentage
     );
 
     return (
@@ -43,7 +43,8 @@ class Bag extends Component {
           total_price={this.props.total_price}
           total_mrp_price={this.props.total_mrp_price}
           delivery_charge={this.props.delivery_charge}
-          gst={this.props.gst}
+          gstPercentage={this.props.gstPercentage}
+          gstAmount={gstAmount}
           totalAfterMrpDiscount={totalAfterMrpDiscount}
           dicountedMrpPercentage={dicountedMrpPercentage}
         />

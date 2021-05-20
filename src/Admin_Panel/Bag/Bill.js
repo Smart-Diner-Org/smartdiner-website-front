@@ -37,12 +37,12 @@ class Bill extends Component {
                             <label className="col-auto" >{`Rs. ${Number(this.props.delivery_charge).toFixed(2)}`}</label> <br />
                         </div>
                         <div className="row">
-                            <label className="col-auto mr-auto">CGST</label><br />
-                            <label className="col-auto" >{`Rs. ${Number(this.props.gst/2).toFixed(2)}`}</label> <br />
+                            <label className="col-auto mr-auto">CGST ({`${Number(this.props.gstPercentage/2).toFixed()} %`})</label><br />
+                            <label className="col-auto" >{`Rs. ${Number(this.props.gstAmount/2).toFixed(2)}`}</label> <br />
                         </div>
                         <div className="row">
-                            <label className="col-auto mr-auto">SGST</label><br />
-                            <label className="col-auto" >{`Rs. ${Number(this.props.gst/2).toFixed(2)}`}</label> <br />
+                            <label className="col-auto mr-auto">SGST ({`${Number(this.props.gstPercentage/2).toFixed()} %`})</label><br />
+                            <label className="col-auto" >{`Rs. ${Number(this.props.gstAmount/2).toFixed(2)}`}</label> <br />
                         </div>
 
 
@@ -66,7 +66,7 @@ class Bill extends Component {
                         </div>
 
                         <div class="col-6 total-amount">
-                            <label >To  Pay : <span >{`Rs. ${Number(this.props.total_price).toFixed(2)}`}</span></label>
+                            <label >Total Paid : <span >{`Rs. ${Number(this.props.total_price).toFixed(2)}`}</span></label>
 
                         </div>
 

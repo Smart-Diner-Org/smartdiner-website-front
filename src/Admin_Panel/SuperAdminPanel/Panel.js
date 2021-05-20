@@ -89,7 +89,7 @@ export default class Panel extends Component {
                   total_price={order.total_price}
                   total_mrp_price={order.total_mrp_price}
                   delivery_charge={order.delivery_charge}
-                  gst={order.gst}
+                  gstPercentage={order.gst}
                   cancelOrder={this.props.cancelOrder}
                   updateStage={this.props.updateStage}
                   isMobile={this.props.isMobile}
