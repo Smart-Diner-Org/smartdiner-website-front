@@ -53,7 +53,7 @@ export default class OrderCard extends Component {
                 style={{ fontSize: "16px" }}
                 className="col-auto"
               >{`${this.date.getDate()}-${
-                this.date.getMonth() + 1
+                this.date.getMonth() + 1  
               }-${this.date.getFullYear()}`}</p>
               <p
                 className="ml-auto col-auto"

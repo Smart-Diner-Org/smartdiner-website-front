@@ -1,51 +1,76 @@
-import React,{Component} from "react"
+import React, { Component } from "react"
+import { tsStringKeyword } from "@babel/types";
 
 
 class Bill extends Component {
-    render(){
-        
-        return(
+    render() {
+
+        return (
             <div class="bill-container">
-                <hr/>
+                <hr />
                 <div className="container">
                     <div>
+
+                        {this.props.dicountedMrpPercentage > 0 ? (
+                            <>
+                                <div className="row">
+                                    <label className="col-auto mr-auto">Total MRP</label><br />
+                                    <label className="col-auto text"><strike>Rs. {this.props.total_mrp_price}</strike></label> <br />
+                                </div>
+                                <div className="row">
+                                    <label className="col-auto mr-auto">Total After Discount</label><br />
+                                    <label className="col-auto" >Rs. {this.props.totalAfterMrpDiscount}</label> <br />
+                                </div>
+                                <div className="row">
+                                    <label className="col-auto mr-auto">Discount on MRP</label><br />
+                                    <label className="col-auto" >{this.props.dicountedMrpPercentage} %</label> <br />
+                                </div>
+                            </>
+                        ) : (
+                                <div className="row">
+                                    <label className="col-auto mr-auto">Total</label><br />
+                                    <label className="col-auto" >{`Rs. ${Number(this.props.total_price).toFixed(2)}`}</label> <br />
+                                </div>
+                            )}
                         <div className="row">
-                            <label className="col-auto mr-auto">Total MRP</label><br/>
-                            <label className="col-auto" >Rs. {this.props.total_mrp_price}</label> <br/>
+                            <label className="col-auto mr-auto">Delivery Charges</label><br />
+                            <label className="col-auto" >{`Rs. ${Number(this.props.delivery_charge).toFixed(2)}`}</label> <br />
                         </div>
                         <div className="row">
-                            <label className="col-auto mr-auto">Total after discount</label><br/>
-                            <label className="col-auto" >Rs. {this.props.totalAfterMrpDiscount}</label> <br/>
+                            <label className="col-auto mr-auto">CGST</label><br />
+                            <label className="col-auto" >{`Rs. ${Number(this.props.gst/2).toFixed(2)}`}</label> <br />
                         </div>
                         <div className="row">
-                            <label className="col-auto mr-auto">Discount on MRP</label><br/>
-                            <label className="col-auto" >{this.props.dicountedMrpPercentage} %</label> <br/>
+                            <label className="col-auto mr-auto">SGST</label><br />
+                            <label className="col-auto" >{`Rs. ${Number(this.props.gst/2).toFixed(2)}`}</label> <br />
                         </div>
-                        <div className="row">
-                            <label className="col-auto mr-auto">Total</label><br/>
-                            <label className="col-auto" >Rs. {this.props.total_price}</label> <br/>
-                        </div>
+
+
+
+
+
+
                     </div>
                     <div className="row">
                         {/* <a className="col-auto mr-auto" href="/"  onclick="return false" >Tax Charges</a>
                         <label className="col-auto" style={{marginBottom:"5rem"}}>{`Rs 354`}</label> */}
                     </div>
-                    
+
                     <div className="final-bill row">
-                            <div class="col-6" >
-                                
-                                    {/* <label >Coupon Code</label> */}
-                                    {/* <input type="textbox" placeholder="Coupon Code"/>
+                        <div class="col-6" >
+
+                            {/* <label >Coupon Code</label> */}
+                            {/* <input type="textbox" placeholder="Coupon Code"/>
                                     <button >Find</button> */}
-                                    
-                                </div>
-                          
-                            <div class="col-6 total-amount">
-                                <label >To  Pay : <span >Rs. {this.props.total_price}</span></label>
-                            
-                            </div>
-                            
-                        
+
+                        </div>
+
+                        <div class="col-6 total-amount">
+                            <label >To  Pay : <span >{`Rs. ${Number(this.props.total_price).toFixed(2)}`}</span></label>
+
+                        </div>
+
+
                     </div>
                 </div>
             </div>
@@ -53,4 +78,4 @@ class Bill extends Component {
         )
     }
 }
- export default Bill
+export default Bill
