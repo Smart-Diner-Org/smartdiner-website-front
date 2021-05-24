@@ -307,13 +307,14 @@ function Footer() {
                       Policies
                     </a>
                   </li>
-                  {/*<li><a href="project.html">Project</a></li> */}
+                  {/* <li><a href="project.html">Project</a></li> */}
                 </ul>
               </div>
             </div>
           </div>
         </div>
       </div>
+      
       <div class="footer-bottom d-flex justify-content-between align-items-center flex-wrap">
         <div class="container">
           <div class="row justify-content-between">
