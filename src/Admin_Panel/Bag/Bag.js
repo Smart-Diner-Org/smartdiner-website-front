@@ -5,8 +5,33 @@ import Delivery from "./Delivery";
 import Bill from "./Bill";
 import "../assets/css/bag.css";
 import getPercentageFromBaseAndFinalValue from "../../helpers/CommonFunctions";
+import axios from "axios";
+import Invoice from "./Invoice";
 
 class Bag extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      title: ""
+    };
+  }
+
+  async componentDidMount() {
+    try {
+      await axios
+        .get('https://jsonplaceholder.typicode.com/todos/1')
+        .then((resp) => {
+          const data1 = resp.data;
+          this.setState({ title: data1.title });
+          console.log(this.state.title)
+        });
+    } catch (error) {
+      console.log(error);
+      alert("Not able to fetch data");
+    }
+  }
+
+
   render() {
 
     const [totalAfterMrpDiscount, dicountedMrpPercentage, gstAmount] = getPercentageFromBaseAndFinalValue(
@@ -47,6 +72,10 @@ class Bag extends Component {
           gstAmount={gstAmount}
           totalAfterMrpDiscount={totalAfterMrpDiscount}
           dicountedMrpPercentage={dicountedMrpPercentage}
+        />
+
+        <Invoice
+         businessName={this.state.title}
         />
 
         <CustomerDetails
