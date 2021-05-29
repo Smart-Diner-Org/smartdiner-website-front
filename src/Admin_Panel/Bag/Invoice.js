@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import jsPDF from "jspdf";
 import 'jspdf-autotable';
+import axios from "axios";
 import logo from "../assets/images/SmartDiner_logo.png";
 
 class Invoice extends Component {
@@ -8,19 +9,21 @@ class Invoice extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      total: this.props.total,
+
     }
   }
+
   jsPdfGenerator = () => {
     var doc = new jsPDF();
+
     var col = [
       'Item',
-      'Hsn/quantity SAC',
-      'Rate/Item',
+      'quantitySAC',
+      'Rate',
       'Discount',
-      'Taxable value',
+      'Taxablevalue',
       'CGST',
-      'SGST/UTGST',
+      'SGST',
       'CESS',
       'Total'
     ];
@@ -91,31 +94,34 @@ class Invoice extends Component {
 
     doc.line(0, 70, 220, 70);
 
+    {
+      this.props.order_details.map((item, index) => {
 
+        var Newitem = [
+          { Item: item.order_detail.original_price, quantitySAC: 'dvsvd', Rate: 'scc', Discount: 'dcc', Taxablevalue: 'cac', CGST: 'sca', SGST: 'csaa', CESS: 'sca', Total: 'scac' },
 
-    var Newitem = [
-      { Item: '1', quantitySAC: 'dvb s', Rate: 'ds', Discount: 'dcc', Taxablevalue: 'cac', CGST: 'sca', SGST: 'csaa', CESS: 'sca', Total: 'scac' },
-      { Item: '2', quantitySAC: 'dsffsd', Rate: 'ds', Discount: 'dcc', Taxablevalue: 'cac', CGST: 'sca', SGST: 'csaa', CESS: 'sca', Total: 'scac' },
-      { Item: '3', quantitySAC: 'dsffsd', Rate: 'ds', Discount: 'dcc', Taxablevalue: 'cac', CGST: 'sca', SGST: 'csaa', CESS: 'sca', Total: 'scac' }
-    ]
+        ]
+        Newitem.forEach(ele => {
+          var temp = [
+            ele.Item,
+            ele.quantitySAC,
+            ele.Rate,
+            ele.Discount,
+            ele.Taxablevalue,
+            ele.CGST,
+            ele.SGST,
+            ele.CESS,
+            ele.Total
+          ];
+          rows.push(temp);
+        })
 
-    Newitem.forEach(ele => {
-      var temp = [ele.Item,
-      ele.quantitySAC,
-      ele.Rate,
-      ele.Discount,
-      ele.Taxablevalue,
-      ele.CGST,
-      ele.SGST,
-      ele.CESS,
-      ele.Total];
-      rows.push(temp);
-    });
-
+      })
+    }
 
     doc.autoTable(col, rows, {
       //styles: { fillColor: [165, 42, 42] },
-      Styles: { 0: { fillColor: [165, 42, 42] } }, // Cells in first column centered and green
+      // ColumnStyles: { 0: { fillColor: [165, 42, 42] } },
       margin: { left: 0, right: 0 },
       theme: ['grid'],
       startY: 75,
@@ -127,11 +133,6 @@ class Invoice extends Component {
     doc.text('Invoice Total :', 150, 120);
     doc.text('Total Amt(in words) :', 150, 125);
 
-
-
-
-
-
     doc.save('smartdiner-websitefront.pdf')
   }
 
@@ -139,6 +140,7 @@ class Invoice extends Component {
     return (
       <div className="main">
         <form>
+
           <button onClick={this.jsPdfGenerator}>Download</button>
         </form>
 

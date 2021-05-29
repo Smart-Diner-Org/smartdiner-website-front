@@ -12,8 +12,8 @@ class BillItem extends Component {
                   <img src={this.props.image} alt="Product" />
                 </>
               ) : (
-                <img src="" alt="Product" />
-              )}
+                  <img src="" alt="Product" />
+                )}
             </div>
           </div>
           <div className="col-9 p-0">
@@ -41,8 +41,8 @@ class BillItem extends Component {
                     <label>Rs.{this.props.discountPrice}</label>
                   </>
                 ) : (
-                  <label>Rs.{this.props.price}</label>
-                )}
+                    <label>Rs.{this.props.price}</label>
+                  )}
               </div>
               <div className="col-3 ml-auto quantity">{this.props.quantity}</div>
             </div>
@@ -57,10 +57,10 @@ class BillItem extends Component {
                   </h3>
                 </>
               ) : (
-                <div>
-                  <br />
-                </div>
-              )}
+                  <div>
+                    <br />
+                  </div>
+                )}
             </div>
 
             {/* <div className="row">

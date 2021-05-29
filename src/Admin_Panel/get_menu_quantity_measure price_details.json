@@ -1,0 +1,378 @@
+{
+    "status": true,
+    "message": "successfully fetched menu details",
+    "orderMenuDetails": [
+        {
+            "id": 1640,
+            "order_id": "1065",
+            "order_detail_id": "1640",
+            "menu_id": null,
+            "menu_quantity_measure_price_id": "115",
+            "createdAt": "2021-05-25T11:12:16.582Z",
+            "updatedAt": "2021-05-25T11:12:16.582Z",
+            "order_detail": {
+                "id": 1640,
+                "quantity": 1,
+                "price": "902.5",
+                "original_price": "950",
+                "createdAt": "2021-05-25T11:12:16.546Z",
+                "updatedAt": "2021-05-25T11:12:16.546Z"
+            },
+            "menu_quantity_measure_price": {
+                "id": 115,
+                "menu_id": "99",
+                "quantity_value_id": "2",
+                "measure_value_id": "2",
+                "price": "950",
+                "display_order": 2,
+                "status": true,
+                "can_display_to_customer": true,
+                "createdAt": "2020-11-30T09:32:03.640Z",
+                "updatedAt": "2020-11-30T09:32:03.640Z",
+                "menu": {
+                    "id": 99,
+                    "restuarant_branch_id": "2",
+                    "category_id": "4",
+                    "name": "Chocolate Kit Kat",
+                    "status": true,
+                    "description": "Soft chocolate sponge filled with chocolatey ganache with kitkat crushes. Minimum of 1 kg order",
+                    "short_description": null,
+                    "image": "https://smart-diner-client-images.s3.ap-south-1.amazonaws.com/dessert_drizzle/menu/Choco+Truffle.jpg",
+                    "price": null,
+                    "serving": 10,
+                    "discount": "5",
+                    "menu_type": "1",
+                    "coupon_valid": false,
+                    "serving_measure": "person(s)",
+                    "is_available": true,
+                    "createdAt": "2020-11-30T09:30:58.834Z",
+                    "updatedAt": "2020-11-30T09:30:58.834Z"
+                },
+                "quantity_values": {
+                    "id": 2,
+                    "quantity": "1",
+                    "status": true,
+                    "createdAt": "2020-10-05T09:53:24.777Z",
+                    "updatedAt": "2020-10-05T09:53:24.777Z"
+                },
+                "measure_values": {
+                    "id": 2,
+                    "name": "kg",
+                    "status": true,
+                    "createdAt": "2020-10-05T09:53:24.821Z",
+                    "updatedAt": "2020-10-05T09:53:24.821Z"
+                }
+            }
+        },
+        {
+            "id": 1639,
+            "order_id": "1065",
+            "order_detail_id": "1639",
+            "menu_id": null,
+            "menu_quantity_measure_price_id": "114",
+            "createdAt": "2021-05-25T11:12:16.580Z",
+            "updatedAt": "2021-05-25T11:12:16.580Z",
+            "order_detail": {
+                "id": 1639,
+                "quantity": 1,
+                "price": "475",
+                "original_price": "500",
+                "createdAt": "2021-05-25T11:12:16.546Z",
+                "updatedAt": "2021-05-25T11:12:16.546Z"
+            },
+            "menu_quantity_measure_price": {
+                "id": 114,
+                "menu_id": "99",
+                "quantity_value_id": "1",
+                "measure_value_id": "2",
+                "price": "500",
+                "display_order": 1,
+                "status": true,
+                "can_display_to_customer": true,
+                "createdAt": "2020-11-30T09:32:03.638Z",
+                "updatedAt": "2020-11-30T09:32:03.638Z",
+                "menu": {
+                    "id": 99,
+                    "restuarant_branch_id": "2",
+                    "category_id": "4",
+                    "name": "Chocolate Kit Kat",
+                    "status": true,
+                    "description": "Soft chocolate sponge filled with chocolatey ganache with kitkat crushes. Minimum of 1 kg order",
+                    "short_description": null,
+                    "image": "https://smart-diner-client-images.s3.ap-south-1.amazonaws.com/dessert_drizzle/menu/Choco+Truffle.jpg",
+                    "price": null,
+                    "serving": 10,
+                    "discount": "5",
+                    "menu_type": "1",
+                    "coupon_valid": false,
+                    "serving_measure": "person(s)",
+                    "is_available": true,
+                    "createdAt": "2020-11-30T09:30:58.834Z",
+                    "updatedAt": "2020-11-30T09:30:58.834Z"
+                },
+                "quantity_values": {
+                    "id": 1,
+                    "quantity": "1/2",
+                    "status": true,
+                    "createdAt": "2020-10-05T09:53:24.777Z",
+                    "updatedAt": "2020-10-05T09:53:24.777Z"
+                },
+                "measure_values": {
+                    "id": 2,
+                    "name": "kg",
+                    "status": true,
+                    "createdAt": "2020-10-05T09:53:24.821Z",
+                    "updatedAt": "2020-10-05T09:53:24.821Z"
+                }
+            }
+        },
+        {
+            "id": 1638,
+            "order_id": "1065",
+            "order_detail_id": "1638",
+            "menu_id": null,
+            "menu_quantity_measure_price_id": "109",
+            "createdAt": "2021-05-25T11:12:16.578Z",
+            "updatedAt": "2021-05-25T11:12:16.578Z",
+            "order_detail": {
+                "id": 1638,
+                "quantity": 2,
+                "price": "450",
+                "original_price": "500",
+                "createdAt": "2021-05-25T11:12:16.546Z",
+                "updatedAt": "2021-05-25T11:12:16.546Z"
+            },
+            "menu_quantity_measure_price": {
+                "id": 109,
+                "menu_id": "98",
+                "quantity_value_id": "1",
+                "measure_value_id": "2",
+                "price": "500",
+                "display_order": 1,
+                "status": true,
+                "can_display_to_customer": true,
+                "createdAt": "2020-11-30T09:32:03.628Z",
+                "updatedAt": "2020-11-30T09:32:03.628Z",
+                "menu": {
+                    "id": 98,
+                    "restuarant_branch_id": "2",
+                    "category_id": "4",
+                    "name": "Chocolate Birthday Cake",
+                    "status": true,
+                    "description": "Chocolate cakes - Minimum of 1 kg order",
+                    "short_description": null,
+                    "image": "https://smart-diner-client-images.s3.ap-south-1.amazonaws.com/dessert_drizzle/menu/Choco+Truffle.jpg",
+                    "price": null,
+                    "serving": 10,
+                    "discount": "10",
+                    "menu_type": "1",
+                    "coupon_valid": false,
+                    "serving_measure": "person(s)",
+                    "is_available": true,
+                    "createdAt": "2020-11-30T09:30:57.439Z",
+                    "updatedAt": "2020-11-30T09:30:57.439Z"
+                },
+                "quantity_values": {
+                    "id": 1,
+                    "quantity": "1/2",
+                    "status": true,
+                    "createdAt": "2020-10-05T09:53:24.777Z",
+                    "updatedAt": "2020-10-05T09:53:24.777Z"
+                },
+                "measure_values": {
+                    "id": 2,
+                    "name": "kg",
+                    "status": true,
+                    "createdAt": "2020-10-05T09:53:24.821Z",
+                    "updatedAt": "2020-10-05T09:53:24.821Z"
+                }
+            }
+        },
+        {
+            "id": 1637,
+            "order_id": "1065",
+            "order_detail_id": "1637",
+            "menu_id": null,
+            "menu_quantity_measure_price_id": "133",
+            "createdAt": "2021-05-25T11:12:16.575Z",
+            "updatedAt": "2021-05-25T11:12:16.575Z",
+            "order_detail": {
+                "id": 1637,
+                "quantity": 1,
+                "price": "60",
+                "original_price": "60",
+                "createdAt": "2021-05-25T11:12:16.546Z",
+                "updatedAt": "2021-05-25T11:12:16.546Z"
+            },
+            "menu_quantity_measure_price": {
+                "id": 133,
+                "menu_id": "112",
+                "quantity_value_id": "10",
+                "measure_value_id": "1",
+                "price": "60",
+                "display_order": 1,
+                "status": true,
+                "can_display_to_customer": true,
+                "createdAt": "2021-05-24T11:05:52.406Z",
+                "updatedAt": "2021-05-24T11:05:52.406Z",
+                "menu": {
+                    "id": 112,
+                    "restuarant_branch_id": "2",
+                    "category_id": "15",
+                    "name": "Moong Dal",
+                    "status": true,
+                    "description": "500 g - Rs.60. 1 kg - Rs.110",
+                    "short_description": null,
+                    "image": "https://smart-diner-client-images.s3.ap-south-1.amazonaws.com/geetham_foods/menu/menu_generic_image.jpg",
+                    "price": null,
+                    "serving": 2,
+                    "discount": "0",
+                    "menu_type": "1",
+                    "coupon_valid": false,
+                    "serving_measure": "person(s)",
+                    "is_available": true,
+                    "createdAt": "2021-05-24T11:03:22.541Z",
+                    "updatedAt": "2021-05-24T11:03:22.541Z"
+                },
+                "quantity_values": {
+                    "id": 10,
+                    "quantity": "100",
+                    "status": true,
+                    "createdAt": "2020-10-05T09:53:24.777Z",
+                    "updatedAt": "2020-10-05T09:53:24.777Z"
+                },
+                "measure_values": {
+                    "id": 1,
+                    "name": "grams",
+                    "status": true,
+                    "createdAt": "2020-10-05T09:53:24.821Z",
+                    "updatedAt": "2020-10-05T09:53:24.821Z"
+                }
+            }
+        },
+        {
+            "id": 1636,
+            "order_id": "1065",
+            "order_detail_id": "1636",
+            "menu_id": null,
+            "menu_quantity_measure_price_id": "131",
+            "createdAt": "2021-05-25T11:12:16.572Z",
+            "updatedAt": "2021-05-25T11:12:16.572Z",
+            "order_detail": {
+                "id": 1636,
+                "quantity": 1,
+                "price": "500",
+                "original_price": "500",
+                "createdAt": "2021-05-25T11:12:16.546Z",
+                "updatedAt": "2021-05-25T11:12:16.546Z"
+            },
+            "menu_quantity_measure_price": {
+                "id": 131,
+                "menu_id": "107",
+                "quantity_value_id": "1",
+                "measure_value_id": "2",
+                "price": "500",
+                "display_order": 1,
+                "status": true,
+                "can_display_to_customer": true,
+                "createdAt": "2021-02-23T11:18:49.940Z",
+                "updatedAt": "2021-02-23T11:18:49.940Z",
+                "menu": {
+                    "id": 107,
+                    "restuarant_branch_id": "2",
+                    "category_id": "15",
+                    "name": "Chocolate Birthday Cake 4",
+                    "status": true,
+                    "description": "Chocolate cakes 4",
+                    "short_description": null,
+                    "image": "https://smart-diner-client-images.s3.ap-south-1.amazonaws.com/dessert_drizzle/menu/Choco+Truffle.jpg",
+                    "price": null,
+                    "serving": 10,
+                    "discount": "0",
+                    "menu_type": "1",
+                    "coupon_valid": false,
+                    "serving_measure": "person(s)",
+                    "is_available": true,
+                    "createdAt": "2021-02-23T11:18:42.100Z",
+                    "updatedAt": "2021-02-23T11:18:42.100Z"
+                },
+                "quantity_values": {
+                    "id": 1,
+                    "quantity": "1/2",
+                    "status": true,
+                    "createdAt": "2020-10-05T09:53:24.777Z",
+                    "updatedAt": "2020-10-05T09:53:24.777Z"
+                },
+                "measure_values": {
+                    "id": 2,
+                    "name": "kg",
+                    "status": true,
+                    "createdAt": "2020-10-05T09:53:24.821Z",
+                    "updatedAt": "2020-10-05T09:53:24.821Z"
+                }
+            }
+        },
+        {
+            "id": 1635,
+            "order_id": "1065",
+            "order_detail_id": "1635",
+            "menu_id": null,
+            "menu_quantity_measure_price_id": "120",
+            "createdAt": "2021-05-25T11:12:16.566Z",
+            "updatedAt": "2021-05-25T11:12:16.566Z",
+            "order_detail": {
+                "id": 1635,
+                "quantity": 2,
+                "price": "400",
+                "original_price": "400",
+                "createdAt": "2021-05-25T11:12:16.546Z",
+                "updatedAt": "2021-05-25T11:12:16.546Z"
+            },
+            "menu_quantity_measure_price": {
+                "id": 120,
+                "menu_id": "103",
+                "quantity_value_id": "1",
+                "measure_value_id": "2",
+                "price": "400",
+                "display_order": 1,
+                "status": true,
+                "can_display_to_customer": true,
+                "createdAt": "2020-12-12T10:50:17.211Z",
+                "updatedAt": "2020-12-12T10:50:17.211Z",
+                "menu": {
+                    "id": 103,
+                    "restuarant_branch_id": "2",
+                    "category_id": "15",
+                    "name": "Rich Plum Cake",
+                    "status": true,
+                    "description": null,
+                    "short_description": "Rich plum cake contains cashews, dates, raisins, fruits and other dry fruits and nuts. Rich in taste & healthy stuff. Specially made for christmas at home",
+                    "image": "https://smart-diner-client-images.s3.ap-south-1.amazonaws.com/dessert_drizzle/menu/rich_plum_cakes.jpg",
+                    "price": null,
+                    "serving": 0,
+                    "discount": "0",
+                    "menu_type": "1",
+                    "coupon_valid": false,
+                    "serving_measure": null,
+                    "is_available": true,
+                    "createdAt": "2020-12-12T10:03:25.188Z",
+                    "updatedAt": "2020-12-12T10:03:25.188Z"
+                },
+                "quantity_values": {
+                    "id": 1,
+                    "quantity": "1/2",
+                    "status": true,
+                    "createdAt": "2020-10-05T09:53:24.777Z",
+                    "updatedAt": "2020-10-05T09:53:24.777Z"
+                },
+                "measure_values": {
+                    "id": 2,
+                    "name": "kg",
+                    "status": true,
+                    "createdAt": "2020-10-05T09:53:24.821Z",
+                    "updatedAt": "2020-10-05T09:53:24.821Z"
+                }
+            }
+        }
+    ]
+}
