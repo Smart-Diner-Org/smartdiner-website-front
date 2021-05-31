@@ -1,19 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import jsPDF from "jspdf";
 import 'jspdf-autotable';
-import axios from "axios";
 import logo from "../assets/images/SmartDiner_logo.png";
 
-class Invoice extends Component {
 
-  constructor(props) {
-    super(props)
-    this.state = {
+const Invoice = props => {
 
-    }
-  }
+  const { order_details } = props
 
-  jsPdfGenerator = () => {
+  const jsPdfGenerator = () => {
     var doc = new jsPDF();
 
     var col = [
@@ -95,7 +90,7 @@ class Invoice extends Component {
     doc.line(0, 70, 220, 70);
 
     {
-      this.props.order_details.map((item, index) => {
+      order_details.map((item, index) => {
 
         var Newitem = [
           { Item: item.order_detail.original_price, quantitySAC: 'dvsvd', Rate: 'scc', Discount: 'dcc', Taxablevalue: 'cac', CGST: 'sca', SGST: 'csaa', CESS: 'sca', Total: 'scac' },
@@ -115,10 +110,8 @@ class Invoice extends Component {
           ];
           rows.push(temp);
         })
-
       })
     }
-
     doc.autoTable(col, rows, {
       //styles: { fillColor: [165, 42, 42] },
       // ColumnStyles: { 0: { fillColor: [165, 42, 42] } },
@@ -136,19 +129,14 @@ class Invoice extends Component {
     doc.save('smartdiner-websitefront.pdf')
   }
 
-  render() {
-    return (
-      <div className="main">
-        <form>
+  return (
+    <div>
+      <form>
+        <button onClick={() => jsPdfGenerator()}>Download</button>
+      </form>
+    </div>
+  );
 
-          <button onClick={this.jsPdfGenerator}>Download</button>
-        </form>
-
-      </div>
-    );
-  }
 }
 
-
-
-export default Invoice;
+export default Invoice                                               
