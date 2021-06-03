@@ -53,7 +53,7 @@ class Bag extends Component {
         />
 
         <Invoice
-          order_details={this.props.order_details}
+          orderId={this.props.id}
         />
 
         <CustomerDetails
