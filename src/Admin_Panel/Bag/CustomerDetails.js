@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Invoice from "./Invoice";
 
 class CustomerDetails extends Component {
   render() {
@@ -35,6 +36,9 @@ class CustomerDetails extends Component {
               )}
               <p>{this.props.mobile}</p>
               <p>{this.props.email}</p>
+              <Invoice
+                orderId={this.props.orderId}
+              />
             </div>
           </div>
         </div>

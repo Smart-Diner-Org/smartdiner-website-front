@@ -203,6 +203,19 @@
   margin-bottom: 10px;
 }
 
+.invoice-button{
+  margin-top:40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.15em;
+  background-color: white;
+  color: #000466;
+  border:none;
+  font-family: "MuseoModerno";
+}
+
 .bill-container {
   padding: 10px 10px 10px 10px;
   font-size: 1em;
@@ -238,6 +251,7 @@
 
 .final-bill button {
   font-size: 0.875em;
+  height:30px;
   border: none;
   background-color: #000466;
   border-radius: 5px;

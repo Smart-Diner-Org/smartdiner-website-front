@@ -5,10 +5,10 @@ import Delivery from "./Delivery";
 import Bill from "./Bill";
 import "../assets/css/bag.css";
 import getPercentageFromBaseAndFinalValue from "../../helpers/CommonFunctions";
-import Invoice from "./Invoice";
 
 
 class Bag extends Component {
+
 
   render() {
 
@@ -52,12 +52,9 @@ class Bag extends Component {
           dicountedMrpPercentage={dicountedMrpPercentage}
         />
 
-        <Invoice
-          orderId={this.props.id}
-        />
-
         <CustomerDetails
           preBookingDetail={this.props.preBookingDetail}
+          orderId={this.props.id}
           name={this.props.name}
           delivery_address_one={this.props.delivery_address_one}
           delivery_address_two={this.props.delivery_address_two}
