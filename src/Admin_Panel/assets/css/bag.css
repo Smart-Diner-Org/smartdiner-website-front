@@ -203,17 +203,37 @@
   margin-bottom: 10px;
 }
 
-.invoice-button{
-  margin-top:40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.15em;
-  background-color: white;
+.invoice-btn button:hover{
+  background-color: #000466;
+  color:  white!important;
+}
+
+.invoice-btn button{
+  background: transparent;
+  border-radius: 0px;
+  border: 2px solid #000466;
+  line-height: 48px;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-shadow: none;
+  text-align: center; 
+  align-items: flex-start;
+  font: 400 13.3333px Arial;
+  text-decoration: none;
+  display: inline-block;
+  border: 2px solid #000466;
   color: #000466;
-  border:none;
-  font-family: "MuseoModerno";
+  font-size: 1em;
+  /* font-family: "MuseoModerno"; */
+  /* float:right; */
+  margin-left:265px; 
+  padding: 10px 10px;
+  background-color: white;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  position: relative;
 }
 
 .bill-container {
@@ -292,5 +312,8 @@
   }
   .top-up {
     font-size: 0.8em;
+  }
+  .invoice-btn button{
+    margin-left:8.75em;
   }
 }

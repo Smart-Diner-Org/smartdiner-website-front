@@ -204,11 +204,10 @@ const Invoice = props => {
       console.log("Inside else..")
     }
   }, [change])
-  // const jsPdfGenerator = () => {}
   return (
-    <div className="invoice-button">
+    <div className="invoice-btn">
       <button
-        style={{ backgroundColor: "#08a860" }}
+        // style={{ backgroundColor: "#08a860" }  }
         onClick={() => setChange(change + 1)}>
         Download Invoice
         </button>

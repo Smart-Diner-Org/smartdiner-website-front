@@ -36,12 +36,13 @@ class CustomerDetails extends Component {
               )}
               <p>{this.props.mobile}</p>
               <p>{this.props.email}</p>
-              <Invoice
-                orderId={this.props.orderId}
-              />
+
             </div>
           </div>
         </div>
+        <Invoice
+          orderId={this.props.orderId}
+        />
       </div>
     );
   }
