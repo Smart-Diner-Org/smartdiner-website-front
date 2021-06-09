@@ -13,7 +13,8 @@ class Bag extends Component {
       this.props.total_price,
       this.props.total_mrp_price,
       this.props.delivery_charge,
-      this.props.gstPercentage
+      this.props.gstPercentage,
+      
     );
 
     return (
