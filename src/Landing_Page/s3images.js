@@ -23,6 +23,8 @@ export const karthik =
   "https://smart-diner.s3.ap-south-1.amazonaws.com/team/karthikraj+2.jpg";
 export const harith =
   "https://smart-diner.s3.ap-south-1.amazonaws.com/team/harith+anand.jpeg";
+  export const swathi =
+  "https://smart-diner.s3.ap-south-1.amazonaws.com/team/swathi+profile.png";
 export const nandhiniSiva = 
   "https://smart-diner.s3.ap-south-1.amazonaws.com/team/nandhiniSiva.jpg";
 export const vinay =
