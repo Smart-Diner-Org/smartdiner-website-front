@@ -49,11 +49,11 @@ const MenuDropDown = ({ employeeName }) => {
       <Dropdown.Menu show={show}>
         <Dropdown.Item>Welcome, {employeeName}</Dropdown.Item>
         <Dropdown.Item>
-          <Link to="/createOfflineOrders">Create Offline Orders</Link>
+          <Link to="/create-restaurant">Create New Restaurant</Link>
         </Dropdown.Item>
-        <Dropdown.Item>
+        {/* <Dropdown.Item>
           <Link to="/admin-panel/edit-menu">Edit Menu</Link>
-        </Dropdown.Item>
+        </Dropdown.Item> */}
         <Dropdown.Item
           onClick={() => {
             localStorage.removeItem("token");
