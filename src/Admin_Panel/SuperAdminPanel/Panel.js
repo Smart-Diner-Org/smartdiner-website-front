@@ -71,32 +71,32 @@ export default class Panel extends Component {
           this.props.orders.map((order, index) => {
             if (this.state.selectedId == order.id)
               return (
-                <Bag
-                  key={index}
-                  id={order.id}
-                  stage_id={order.stage_id}
-                  name={order.customer.name}
-                  preBookingDetail={order.preBookingDetail}
-                  delivery_address_one={order.delivery_address_one}
-                  delivery_address_two={order.delivery_address_two}
-                  toggelBag={() =>
-                    this.setState({ showBag: false, selectedId: null })
-                  }
-                  mobile={order.customer.mobile}
-                  email={order.customer.email}
-                  order_details={this.state.orderMenuDetails}
-                  price_details={order.order_detail_menus}
-                  total_price={order.total_price}
-                  total_mrp_price={order.total_mrp_price}
-                  delivery_charge={order.delivery_charge}
-                  gstPercentage={order.gst}
-                  cancelOrder={this.props.cancelOrder}
-                  updateStage={this.props.updateStage}
-                  isMobile={this.props.isMobile}
-                  delivery_partner_preference_id={
-                    this.props.delivery_partner_preference_id
-                  }
-                />
+                  <Bag
+                    key={index}
+                    id={order.id}
+                    stage_id={order.stage_id}
+                    name={order.customer.name}
+                    preBookingDetail={order.preBookingDetail}
+                    delivery_address_one={order.delivery_address_one}
+                    delivery_address_two={order.delivery_address_two}
+                    toggelBag={() =>
+                      this.setState({ showBag: false, selectedId: null })
+                    }
+                    mobile={order.customer.mobile}
+                    email={order.customer.email}
+                    order_details={this.state.orderMenuDetails}
+                    price_details={order.order_detail_menus}
+                    total_price={order.total_price}
+                    total_mrp_price={order.total_mrp_price}
+                    delivery_charge={order.delivery_charge}
+                    gstPercentage={order.gst}
+                    cancelOrder={this.props.cancelOrder}
+                    updateStage={this.props.updateStage}
+                    isMobile={this.props.isMobile}
+                    delivery_partner_preference_id={
+                      this.props.delivery_partner_preference_id
+                    }
+                  />
               );
           })}
       </div>

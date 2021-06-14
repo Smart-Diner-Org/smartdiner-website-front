@@ -6,7 +6,10 @@ import Bill from "./Bill";
 import "../assets/css/bag.css";
 import getPercentageFromBaseAndFinalValue from "../../helpers/CommonFunctions";
 
+
 class Bag extends Component {
+
+
   render() {
 
     const [totalAfterMrpDiscount, dicountedMrpPercentage, gstAmount] = getPercentageFromBaseAndFinalValue(
@@ -52,6 +55,7 @@ class Bag extends Component {
 
         <CustomerDetails
           preBookingDetail={this.props.preBookingDetail}
+          orderId={this.props.id}
           name={this.props.name}
           delivery_address_one={this.props.delivery_address_one}
           delivery_address_two={this.props.delivery_address_two}
