@@ -827,7 +827,7 @@ th {
 }
 
 .section-title {
-  padding-bottom: 70px;
+  /* padding-bottom: 70px; */
 }
 
 @media (max-width: 570px) {
@@ -1113,10 +1113,10 @@ th {
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
+  height: 95%;
   width: 60px;
-  /* background-color: #000466;
-  border-right: 2px solid #000466; */
+  background-color: #000466;
+  border-right: 2px solid #000466;
   z-index: 1;
   box-sizing: border-box;
 }
@@ -1591,28 +1591,26 @@ p {
 
 .single-brand-item {
   background: #fff;
-  /* width: 100%; */
-  /* max-width: 300px !important;
+  width: 100%;
+  max-width: 300px !important;
   height: auto;
-  cursor: pointer; */
+  cursor: pointer;
 }
 
 .single-brand-item p {
   color: #000466;
   font-family: "Lato";
-  /* text-align: center;
-    width: 195px; */
 }
 
 .single-brand-item .visit-site-btn {
-   padding-top:175px; 
+  padding-top:175px; 
    width: fit-content;
    justify-self: end;
    justify-content: center;
 }
-
-.single-brand-item .customer-img{
+.single-brand-item img {
   width: auto !important;
+  /* border-radius: 12px; */
   display: block;
   float:left;
   max-width:50%;
@@ -1630,22 +1628,20 @@ p {
   cursor: pointer;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
   -webkit-border-radius: 12px;
   -moz-border-radius: 12px;
   -ms-border-radius: 12px;
-  -o-border-radius: 12px;  
+  -o-border-radius: 12px;
 }
 
 .quotes_area {
   background: #000466;
 }
 
-  .quotes_area h1 {
-    position: absolute;
-    z-index: 999;
-  }
+.quotes_area h1 {
+  position: absolute;
+  z-index: 999;
+}
 
 /*Service area css
 ==========================================*/
@@ -1658,9 +1654,9 @@ p {
 .single-service .service-icon {
   position: relative;
   margin-bottom: 40px;
-  /* display: flex;
+  display: flex;
   align-items: flex-end;
-  height: 250px; */
+  height: 250px;
 }
 
 .single-service .service-icon img {
@@ -5351,7 +5347,7 @@ h6 {
 }
 
 .footer-bottom {
-  padding: 26px 0px;  
+  padding: 26px 0px;
   border-top: 2px solid #fff;
 }
 

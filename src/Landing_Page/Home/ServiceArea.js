@@ -8,10 +8,10 @@ import {
 
 function ServiceArea() {
   return (
-    <section class="service-area section-gap pr-40 pl-70">
+    <section class="service-area section-gap ">
       <div class="row justify-content-center">
         <div class="col-lg-9 text-center">
-          <div class="section-title">
+          <div class="section-title ">
             <h2 style={{ color: "white" }}>Our Services</h2>
           </div>
         </div>
