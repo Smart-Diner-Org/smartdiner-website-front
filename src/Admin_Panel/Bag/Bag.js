@@ -12,7 +12,7 @@ class Bag extends Component {
 
   render() {
 
-    const [totalAfterMrpDiscount, dicountedMrpPercentage, gstAmount] = getPercentageFromBaseAndFinalValue(
+    const [totalAfterMrpDiscount, dicountedMrpPercentage, gstAmount,delivery_charge_gst] = getPercentageFromBaseAndFinalValue(
       this.props.total_price,
       this.props.total_mrp_price,
       this.props.delivery_charge,
@@ -49,6 +49,7 @@ class Bag extends Component {
           delivery_charge={this.props.delivery_charge}
           gstPercentage={this.props.gstPercentage}
           gstAmount={gstAmount}
+          delivery_charge_gst={delivery_charge_gst}
           totalAfterMrpDiscount={totalAfterMrpDiscount}
           dicountedMrpPercentage={dicountedMrpPercentage}
         />
