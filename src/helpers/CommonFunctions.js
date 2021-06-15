@@ -19,16 +19,19 @@ export function getPercentageFromBaseAndFinalValue(baseValue, finalValue) {
   return (1-(finalValue/baseValue))*100;
 }
 
+
+
 export default function calculateDicountedValueForOrder(
   totalPrice,
   totalMrpPrice,
-  deliveryCharge = 0,
-  gstPercentage=0
+  deliveryCharge,
+  gstPercentage
 ) {
-
+  
+  const delivery_charge_gst =((deliveryCharge)* (gstPercentage/100));
   const priceWithoutDeliveryCharge = totalPrice-deliveryCharge;
   const baseAmountWithoutGst = getBaseValue(gstPercentage, priceWithoutDeliveryCharge).toFixed(2);
-  const gstAmount = baseAmountWithoutGst * (gstPercentage/100);
+  const gstAmount = (baseAmountWithoutGst)* (gstPercentage/100);
   const discountedPercentage = (getPercentageFromBaseAndFinalValue(totalMrpPrice, baseAmountWithoutGst)).toFixed();
-  return [baseAmountWithoutGst, discountedPercentage, gstAmount];
+  return [baseAmountWithoutGst, discountedPercentage, gstAmount,delivery_charge_gst];
 }

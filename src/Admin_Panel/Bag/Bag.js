@@ -6,14 +6,18 @@ import Bill from "./Bill";
 import "../assets/css/bag.css";
 import getPercentageFromBaseAndFinalValue from "../../helpers/CommonFunctions";
 
+
 class Bag extends Component {
+
+
   render() {
 
-    const [totalAfterMrpDiscount, dicountedMrpPercentage, gstAmount] = getPercentageFromBaseAndFinalValue(
+    const [totalAfterMrpDiscount, dicountedMrpPercentage, gstAmount,delivery_charge_gst] = getPercentageFromBaseAndFinalValue(
       this.props.total_price,
       this.props.total_mrp_price,
       this.props.delivery_charge,
-      this.props.gstPercentage
+      this.props.gstPercentage,
+      
     );
 
     return (
@@ -45,12 +49,14 @@ class Bag extends Component {
           delivery_charge={this.props.delivery_charge}
           gstPercentage={this.props.gstPercentage}
           gstAmount={gstAmount}
+          delivery_charge_gst={delivery_charge_gst}
           totalAfterMrpDiscount={totalAfterMrpDiscount}
           dicountedMrpPercentage={dicountedMrpPercentage}
         />
 
         <CustomerDetails
           preBookingDetail={this.props.preBookingDetail}
+          orderId={this.props.id}
           name={this.props.name}
           delivery_address_one={this.props.delivery_address_one}
           delivery_address_two={this.props.delivery_address_two}

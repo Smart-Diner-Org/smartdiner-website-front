@@ -7,22 +7,23 @@ class BagItemList extends React.Component {
       <div>
         {this.props.order_details.map((item, index) => {
           return (
-            <BillItem
-              key={index}
-              description={item.menu_quantity_measure_price.menu.short_descr}
-              itemName={item.menu_quantity_measure_price.menu.name}
-              image={item.menu_quantity_measure_price.menu.image}
-              // price={this.props.price_details[index].order_detail.original_price}
-              price={item.order_detail.original_price}
-              // discountPrice={this.props.price_details[index].order_detail.price}
-              discountPrice={item.order_detail.price}
-              discount={item.menu_quantity_measure_price.menu.discount}
-              // quantity={this.props.price_details[index].order_detail.quantity}
-              quantity={item.order_detail.quantity}
-              measure_values={item.menu_quantity_measure_price.measure_values.name}
-              quantity_values={item.menu_quantity_measure_price.quantity_values.quantity}
-             
-            />
+            <div>
+              <BillItem
+                key={index}
+                description={item.menu_quantity_measure_price.menu.short_descr}
+                itemName={item.menu_quantity_measure_price.menu.name}
+                image={item.menu_quantity_measure_price.menu.image}
+                // price={this.props.price_details[index].order_detail.original_price}
+                price={item.order_detail.original_price}
+                // discountPrice={this.props.price_details[index].order_detail.price}
+                discountPrice={item.order_detail.price}
+                discount={item.menu_quantity_measure_price.menu.discount}
+                // quantity={this.props.price_details[index].order_detail.quantity}
+                quantity={item.order_detail.quantity}
+                measure_values={item.menu_quantity_measure_price.measure_values.name}
+                quantity_values={item.menu_quantity_measure_price.quantity_values.quantity}
+              />
+            </div>
           );
         })}
       </div>
