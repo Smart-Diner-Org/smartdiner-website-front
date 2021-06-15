@@ -827,7 +827,7 @@ th {
 }
 
 .section-title {
-  padding-bottom: 70px;
+  /* padding-bottom: 70px; */
 }
 
 @media (max-width: 570px) {
@@ -1113,7 +1113,7 @@ th {
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
+  height: 95%;
   width: 60px;
   background-color: #000466;
   border-right: 2px solid #000466;
@@ -1603,22 +1603,31 @@ p {
 }
 
 .single-brand-item .visit-site-btn {
-  background-color: #000466;
-  color: white !important;
-  padding: 0.35em 1em;
-  width: fit-content;
-  justify-self: end;
-  margin-bottom: 20px;
+  padding-top:175px; 
+   width: fit-content;
+   justify-self: end;
+   justify-content: center;
 }
 .single-brand-item img {
   width: auto !important;
-  border-radius: 12px;
+  /* border-radius: 12px; */
+  display: block;
+  float:left;
+  max-width:50%;
   max-height: 200px;
+  margin: 0 auto;
+  position: absolute;
+  top:15%;
+  left:25%;
+  border-radius: 12px;
+  width:  100px;
+  height: 100px;
+  background-size: 100% 100%;
+  /* width:50vh;  */
+  background-size: cover;
   cursor: pointer;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
-  -o-transition: all 0.3s ease 0s;
-  transition: all 0.3s ease 0s;
   -webkit-border-radius: 12px;
   -moz-border-radius: 12px;
   -ms-border-radius: 12px;

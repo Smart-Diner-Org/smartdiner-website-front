@@ -79,9 +79,10 @@ function Testimonal() {
               draggable
               focusOnSelect={true}
               keyBoardControl
-              minimumTouchDrag={80}
+              minimumTouchDrag={180}
               renderButtonGroupOutside={false}
               renderDotsOutside={false}
+              infinite={false}
               responsive={{
                 desktop: {
                   breakpoint: {
@@ -96,7 +97,7 @@ function Testimonal() {
                     max: 464,
                     min: 0,
                   },
-                  items: 2,
+                  items: 1,
                   partialVisibilityGutter: 30,
                 },
                 tablet: {
@@ -106,10 +107,10 @@ function Testimonal() {
                   },
                   items: 3.5,
                   partialVisibilityGutter: 30,
-                },
+                }
               }}
               sliderClass=""
-              slidesToSlide={1}
+             // slidesToSlide={1}
               swipeable
             >
               {customerList.map((customer) => (
