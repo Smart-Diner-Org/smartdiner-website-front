@@ -205,13 +205,15 @@ const Invoice = props => {
     }
   }, [change])
   return (
-    <div className="invoice-btn">
-      <button
-        // style={{ backgroundColor: "#08a860" }  }
-        onClick={() => setChange(change + 1)}>
-        Download Invoice
+    <div className="container">
+      <div className="invoice-btn ">
+        <button
+          // style={{ backgroundColor: "#08a860" }  }
+          onClick={() => setChange(change + 1)}>
+          Download Invoice
         </button>
-    </div >
+      </div >
+    </div>
   );
 }
 
