@@ -29,7 +29,7 @@ export default function calculateDicountedValueForOrder(
 ) {
   
   const delivery_charge_gst =((deliveryCharge)* (gstPercentage/100));
-  const priceWithoutDeliveryCharge = totalPrice-deliveryCharge;
+  const priceWithoutDeliveryCharge = totalPrice-deliveryCharge-delivery_charge_gst;
   const baseAmountWithoutGst = getBaseValue(gstPercentage, priceWithoutDeliveryCharge).toFixed(2);
   const gstAmount = (baseAmountWithoutGst)* (gstPercentage/100);
   const discountedPercentage = (getPercentageFromBaseAndFinalValue(totalMrpPrice, baseAmountWithoutGst)).toFixed();
