@@ -180,40 +180,18 @@ function CreateRestaurant() {
 
      let sliderImages=[];    
      for (let i = 0; i < sliderImg.length; i++) {
-      if (sliderImgUrl[i] === "") {
-        if (sliderImgContent[i] === "") {
-          sliderImages.push({
-            url: null,
-            image: sliderImg[i],
-            content: null,
-          });
-        }
-        else {
-          sliderImages.push({
-            url: null,
-            image: sliderImg[i],
-            content: sliderImgContent[i],
-          });
-        }
+      if (sliderImgUrl[i] === ""||sliderImgContent[i]===""||sliderImg[i]==="") {
+        sliderImages=null
       }
-      else {
-        if (sliderImgContent[i] === "") {
-          sliderImages.push({
-            url: sliderImgUrl[i],
-            image: sliderImg[i],
-            content: null,
-          });
-        }
-        else {
+      else{
           sliderImages.push({
             url: sliderImgUrl[i],
             image: sliderImg[i],
             content: sliderImgContent[i],
           });
         }
-      }
     }
-
+    
     let cardsImages = [];
     for (let i = 0; i < cards.length; i++) {
       cardsImages.push({
