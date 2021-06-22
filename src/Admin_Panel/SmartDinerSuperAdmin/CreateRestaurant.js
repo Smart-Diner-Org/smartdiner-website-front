@@ -178,13 +178,39 @@ function CreateRestaurant() {
       };
     });
 
-    let sliderImages = [];
-    for (let i = 0; i < sliderImg.length; i++) {
-      sliderImages.push({
-        url: sliderImgUrl[i],
-        image: sliderImg[i],
-        content: sliderImgContent[i],
-      });
+     for (let i = 0; i < sliderImg.length; i++) {
+      if (sliderImgUrl[i] === "") {
+        if (sliderImgContent[i] === "") {
+          sliderImages.push({
+            url: null,
+            image: sliderImg[i],
+            content: null,
+          });
+        }
+        else {
+          sliderImages.push({
+            url: null,
+            image: sliderImg[i],
+            content: sliderImgContent[i],
+          });
+        }
+      }
+      else {
+        if (sliderImgContent[i] === "") {
+          sliderImages.push({
+            url: sliderImgUrl[i],
+            image: sliderImg[i],
+            content: null,
+          });
+        }
+        else {
+          sliderImages.push({
+            url: sliderImgUrl[i],
+            image: sliderImg[i],
+            content: sliderImgContent[i],
+          });
+        }
+      }
     }
 
     let cardsImages = [];
