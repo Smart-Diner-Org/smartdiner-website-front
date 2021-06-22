@@ -1,5 +1,7 @@
 .smartdiner-superadmin-home {
   padding-top: 80px;
+  max-height: 600px;
+  overflow-y: scroll;
 }
 @media only screen and (max-width: 769px) {
   .smartdiner-superadmin-home {
