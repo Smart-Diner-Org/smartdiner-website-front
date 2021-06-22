@@ -178,6 +178,7 @@ function CreateRestaurant() {
       };
     });
 
+     let sliderImages=[];    
      for (let i = 0; i < sliderImg.length; i++) {
       if (sliderImgUrl[i] === "") {
         if (sliderImgContent[i] === "") {
