@@ -5,6 +5,9 @@ import Popover from "react-bootstrap/Popover";
 import Spinner from "react-bootstrap/Spinner";
 import axios from "axios";
 
+let flagged = 0
+let FromData = 0
+let ToData = 0
 function AddResturantBranchDetails({
   setshowRestaurantLinksComponent,
   resturantBranchDetails,
@@ -166,9 +169,54 @@ function AddResturantBranchDetails({
     const data = resturantBranchDetails;
     data[index].timings[timeIndex][type][fromToIndex] = value;
     setresturantBranchDetails([...data]);
+    if (type === "from")
+      FromData = data[index].timings[timeIndex][type][fromToIndex]
+    else
+      ToData = data[index].timings[timeIndex][type][fromToIndex]
+  };
+
+  const applyForAll = (index, timeIndex) => {
+    var checkboxes = document.getElementsByName('active');
+    for (var i = 0; i <= checkboxes.length - 1; i++) {
+      // checkboxes[index].checked = 'FALSE';
+      if (flagged === 1) {
+        if (i === checkboxes.length - 1) {
+          resturantBranchDetails[index].timings[i].active = true;
+          resturantBranchDetails[index].timings[i].from = [
+            ...resturantBranchDetails[index].timings[i].from,
+            FromData,
+          ];
+          resturantBranchDetails[index].timings[i].to = [
+            ...resturantBranchDetails[index].timings[i].to,
+            ToData,
+          ];
+          setresturantBranchDetails([...resturantBranchDetails]);
+        }
+        else {
+          resturantBranchDetails[index].timings[i].active = true;
+          resturantBranchDetails[index].timings[i].from = [
+            ...resturantBranchDetails[index].timings[i + 1].from,
+            FromData,
+          ];
+          resturantBranchDetails[index].timings[i].to = [
+            ...resturantBranchDetails[index].timings[i + 1].to,
+            ToData,
+          ];
+          setresturantBranchDetails([...resturantBranchDetails]);
+        }
+        setresturantBranchDetails([...resturantBranchDetails]);
+      }
+      else {
+        resturantBranchDetails[index].timings[i].active = true;
+        resturantBranchDetails[index].timings[i].from[index] = document.querySelector('input[name=from]').value;
+        resturantBranchDetails[index].timings[i].to[index] = document.querySelector('input[name=to]').value;
+        setresturantBranchDetails([...resturantBranchDetails]);
+      }
+    }
   };
 
   const addMoreTimeSlot = (index, timeIndex) => {
+    flagged = 1
     const data = resturantBranchDetails;
     data[index].timings[timeIndex].from = [
       ...data[index].timings[timeIndex].from,
@@ -314,14 +362,28 @@ function AddResturantBranchDetails({
                           <label className="mb-0">{day.day}</label>
                         </tr>
                         <tr>
-                          <button
-                            className="btn btn-warning"
-                            style={day.active ? {} : { opacity: "0.3" }}
-                            disabled={day.active ? false : true}
-                            onClick={() => addMoreTimeSlot(index, timeIndex)}
-                          >
-                            Add more time slots
+                          <td>
+                            <button
+                              className="btn btn-warning"
+                              style={day.active ? {} : { opacity: "0.3" }}
+                              disabled={day.active ? false : true}
+                              onClick={() => addMoreTimeSlot(index, timeIndex)}
+                            >
+                              Add more time slots
                           </button>
+                          </td>
+                          <td>
+                            {
+                              day.day === "Sunday" ?
+                                <button
+                                  className="btn btn-warning"
+                                  style={day.active ? {} : { opacity: "0.3" }}
+                                  disabled={day.active ? false : true}
+                                  onClick={() => applyForAll(index, timeIndex)}
+                                >Apply for all</button>
+                                : ""
+                            }
+                          </td>
                         </tr>
                       </td>
                       <td>
