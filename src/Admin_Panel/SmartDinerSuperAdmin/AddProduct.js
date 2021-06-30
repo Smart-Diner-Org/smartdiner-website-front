@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import ProductForm from "./ProductForm";
+import axios from "axios";
+import Autocomplete from 'react-autocomplete';
 
 // Get menu items name, image, quantity & measure & price values
 // Get menu item's discount value, menu type
@@ -19,6 +21,13 @@ function AddProduct({
   setshowWebsiteImages,
   setshowAddProduct,
 }) {
+
+  const [categoryName, setCategoryName] = useState("");
+  const [categoryList, setCategoryList] = useState([]);
+  const [addCategoryList, setAddCategoryList] = useState([]);
+  const [selectedCategoryList, setSelectedCategoryList] = useState([]);
+
+
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedProduct, setselectedProduct] = useState("");
   const [newProduct, setNewProduct] = useState(false);
@@ -32,7 +41,24 @@ function AddProduct({
   const [discount, setdiscount] = useState("");
   const [image, setimage] = useState("");
 
-  const goNext = () => {};
+  useEffect(() => {
+    axios
+      .get(
+        `${process.env.REACT_APP_BACKEND_URL}/after_login/get_menu_categories`,
+        {
+          headers: {
+            "x-access-token": `${localStorage.getItem("token")}`,
+          },
+        }
+      )
+      .then(res => {
+        setCategoryList(res.data.menuCategories)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }, [])
+  const goNext = () => { };
   const goBack = () => {
     setshowAddProduct(false);
     setshowWebsiteImages(true);
@@ -94,6 +120,55 @@ function AddProduct({
     makeDataEmpty();
   };
 
+
+  const addCategory = (e) => {
+    let menuCategories = [];
+    menuCategories = menuCategories.concat(categoryName);
+    const data = {
+      menuCategories: menuCategories,
+    };
+    if (!categoryList.some(val => val.name === categoryName)) {
+      axios
+        .post(
+          `${process.env.REACT_APP_BACKEND_URL}/after_login/add_menu_categories`,
+          data,
+          {
+            headers: {
+              "x-access-token": `${localStorage.getItem("token")}`,
+            },
+          }
+        )
+        .then(res => {
+          setAddCategoryList(res.data.savedMenuCategories)
+          setCategoryList(categoryList.concat(res.data.savedMenuCategories))
+        })
+        .catch(err => {
+          console.log(err)
+        })
+    }
+    setCategory([
+      ...categoryArray,
+      categoryName
+    ]);
+    setCategoryName('');
+  }
+
+  const selectedItems = (v) => {
+    setCategoryName(v)
+    setSelectedCategoryList(selectedCategoryList.concat(v));
+    setCategory([
+      ...categoryArray,
+      v
+    ]);
+    setCategoryName('');
+  }
+  const categoryCloseButton = (value, i) => {
+    // category.splice(index)
+    // categoryArray.splice(0, categoryArray.length)
+    categoryArray.splice(i, 1)
+    // console.log(value)
+    // console.log(i)
+  }
   return (
     <div className="container add-customer website-options product-details">
       <h2>Product Details</h2>
@@ -121,6 +196,9 @@ function AddProduct({
                   value={category}
                 >
                   {category}
+                  <button className="category-list-close" onClick={
+                    () => categoryCloseButton(category, index)
+                  }>X</button>
                 </h5>
               ))}
             </ul>
@@ -142,15 +220,64 @@ function AddProduct({
                 ))}
               </select>
             )}
-            <input
-              type="text"
-              placeholder="Enter Catergory..."
-              autoFocus
-              autoComplete="off"
-              id="categoryNameInput"
+            <Autocomplete
+              value={categoryName}
+              inputProps={{
+                type: "text",
+                placeholder: "Enter Catergory...",
+                autoFocus: "on",
+                autoComplete: "off",
+                id: "categoryNameInput",
+              }}
+              selectOnBlur={false}
+              getItemValue={item => item.name}
+              items={categoryList}
+              wrapperStyle={{
+                fontSize: '14px', cursor: 'pointer',
+              }}
+              shouldItemRender={
+                (item, value) => item.name.toLowerCase().trim().indexOf(value.toLowerCase().trim()) > -1
+              }
+              renderMenu={(item, highlighted) => (
+                <div className="dropdown">
+                  {categoryName.length > 0 ? <>{item}</> : ""}
+
+                  {categoryName.length > 0 && categoryName != item.name ?
+                    <div
+                      key={item.id}
+                      style={{ backgroundColor: highlighted ? '#eee' : 'transparent' }}
+                      onClick={() => addCategory()}>
+                      <i class="lni lni-search"></i>
+                      &nbsp;&nbsp;
+                       {categoryName}...
+                    </div>
+                    : ""}
+                  {categoryName.length === 0 ? <>loading...</> : ''}
+                </div>
+              )}
+              renderItem={(item, highlighted) =>
+                <div
+                  key={item.id}
+                  style={{ backgroundColor: highlighted ? '#eee' : 'transparent' }}
+                >
+                  <>
+                    <i class="lni lni-search"></i>
+                    &nbsp;&nbsp;
+                      {item.name}
+                  </>
+                </div>
+              }
+              onChange={
+                (event) => setCategoryName(event.target.value)
+              }
+              onSelect={
+                (val) => {
+                  selectedItems(val)
+                }
+              }
             />
           </h4>
-          <div className="col-lg-12 d-flex">
+          {/* <div className="col-lg-12 d-flex">
             <button
               className="btn next-btn mt-0"
               onClick={() => {
@@ -163,88 +290,94 @@ function AddProduct({
             >
               Add Category
             </button>
-          </div>
+          </div> */}
         </div>
         <div className="col-lg-8 col-md-8 p-0">
-          {selectedCategory === "" ? (
+          {
+            // selectedProduct === ""
+            categoryArray.length === 0 ? (
             <div className="d-flex justify-content-center align-items-center h-100">
               <label>
                 Create Category and <br /> Select the Category to see the items
                 under it!!!
+                {categoryArray}
               </label>
             </div>
           ) : (
-            <>
-              {selectedProduct === "" ? (
-                <div className="col-lg-12 d-flex flex-column justity-content-center align-items-center p-0">
-                  {newProduct ? (
-                    <ProductForm
-                      selectedCategory={selectedCategory}
-                      name={name}
-                      setName={setName}
-                      description={description}
-                      setdescription={setdescription}
-                      shortDescription={shortDescription}
-                      setshortDescription={setshortDescription}
-                      type={type}
-                      settype={setType}
-                      price={price}
-                      setprice={setprice}
-                      discount={discount}
-                      setdiscount={setdiscount}
-                      image={image}
-                      setimage={setimage}
-                      productFormSubmit={newProductFormSubmit}
-                    />
-                  ) : (
-                    <>
-                      <button
-                        className="btn next-btn"
-                        onClick={() => setNewProduct(true)}
-                      >
-                        Add New Item
+              <>
+                {
+                  // selectedProduct === ""
+                  categoryArray.length !== 0 ? (
+                  <div className="col-lg-12 d-flex flex-column justity-content-center align-items-center p-0">
+                    {newProduct ? (
+                      <ProductForm
+                        selectedCategory={selectedCategory}
+                        name={name}
+                        setName={setName}
+                        description={description}
+                        setdescription={setdescription}
+                        shortDescription={shortDescription}
+                        setshortDescription={setshortDescription}
+                        type={type}
+                        settype={setType}
+                        price={price}
+                        setprice={setprice}
+                        discount={discount}
+                        setdiscount={setdiscount}
+                        image={image}
+                        setimage={setimage}
+                        productFormSubmit={newProductFormSubmit}
+                      />
+                    ) : (
+                        <>
+                          <button
+                            className="btn next-btn"
+                            onClick={() => setNewProduct(true)}
+                          >
+                            Add New Item
                       </button>
-                      {productsArray.map((item, index) => {
-                        if (item.category === selectedCategory)
-                          return (
-                            <div key={index} className="col-lg-12 d-flex mb-10">
-                              <h6>{item.name}</h6>
-                              <span
-                                className="ml-auto"
-                                onClick={() => editProduct(index)}
-                              >
-                                Edit
+                          {productsArray.map((item, index) => {
+                            if (item.category === selectedCategory)
+                              return (
+                                <div key={index} className="col-lg-12 d-flex mb-10">
+                                  <h6>{item.name}</h6>
+                                  <span
+                                    className="ml-auto"
+                                    onClick={() => editProduct(index)}
+                                  >
+                                    Edit
                               </span>
-                            </div>
-                          );
-                      })}
-                    </>
+                                </div>
+                              );
+                          })}
+                        </>
+                      )}
+                  </div>
+                ) : (
+                    <div className="col-lg-12 d-flex flex-column justity-content-center align-items-center p-0">
+                      <ProductForm
+                        selectedCategory={selectedCategory}
+                        name={name}
+                        setName={setName}
+                        description={description}
+                        setdescription={setdescription}
+                        shortDescription={shortDescription}
+                        setshortDescription={setshortDescription}
+                        type={type}
+                        settype={setType}
+                        price={price}
+                        setprice={setprice}
+                        discount={discount}
+                        setdiscount={setdiscount}
+                        image={image}
+                        setimage={setimage}
+                        productFormSubmit={editProductFormSubmit}
+                      />
+                    </div>
                   )}
-                </div>
-              ) : (
-                <div className="col-lg-12 d-flex flex-column justity-content-center align-items-center p-0">
-                  <ProductForm
-                    selectedCategory={selectedCategory}
-                    name={name}
-                    setName={setName}
-                    description={description}
-                    setdescription={setdescription}
-                    shortDescription={shortDescription}
-                    setshortDescription={setshortDescription}
-                    type={type}
-                    settype={setType}
-                    price={price}
-                    setprice={setprice}
-                    discount={discount}
-                    setdiscount={setdiscount}
-                    image={image}
-                    setimage={setimage}
-                    productFormSubmit={editProductFormSubmit}
-                  />
-                </div>
-              )}
-            </>
-          )}
+              </>
+            )
+          }
         </div>
         <div className="col-lg-12 d-flex align-items-center mt-20 border-top">
           <button className="btn next-btn" onClick={goBack}>
