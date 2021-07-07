@@ -23,6 +23,7 @@ function CreateRestaurant() {
   const [showcustomerDetails, setCustomerDetails] = useState(true);
 
   const [restaurantName, setRestaurantName] = useState("");
+  const [restaurantbranchid, setRestaurantBranchId] = useState("");
   const [websiteURL, setWebsiteURL] = useState("");
   const [logoImg, setLogoImg] = useState(null);
   const [logoUrl, setLogoUrl] = useState(null);
@@ -246,6 +247,7 @@ function CreateRestaurant() {
       )
       .then((res) => {
         console.log(res);
+        setRestaurantBranchId(res.data.createdbranchesDetail[0].restaurant_id)
       })
       .catch((error) => {
         alert(error.message);
@@ -394,15 +396,19 @@ function CreateRestaurant() {
             />
           )}
           {showAddProduct && (
-            <AddProduct
-              categoryArray={categoryArray}
-              setCategory={setCategory}
-              productsArray={productsArray}
-              setProductsArray={setProductsArray}
-              setshowAddProduct={setshowAddProduct}
-              setshowWebsiteImages={setshowWebsiteImages}
-            />
-          )}
+            <>
+              <AddProduct
+                categoryArray={categoryArray}
+                setCategory={setCategory}
+                productsArray={productsArray}
+                setProductsArray={setProductsArray}
+                setshowAddProduct={setshowAddProduct}
+                setshowWebsiteImages={setshowWebsiteImages}
+                restaurantbranchid={restaurantbranchid}
+                setRestaurantBranchId={setRestaurantBranchId}
+              />
+              {console.log(restaurantbranchid)}
+            </>)}
         </Jumbotron>
       </div>
     </>
