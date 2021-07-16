@@ -23,6 +23,7 @@ function CreateRestaurant() {
   const [showcustomerDetails, setCustomerDetails] = useState(true);
 
   const [restaurantName, setRestaurantName] = useState("");
+  const [restaurantbranchid, setRestaurantBranchId] = useState("");
   const [websiteURL, setWebsiteURL] = useState("");
   const [logoImg, setLogoImg] = useState(null);
   const [logoUrl, setLogoUrl] = useState(null);
@@ -233,7 +234,6 @@ function CreateRestaurant() {
       pageTitle: pageTitle,
     };
     sessionStorage.setItem("data", JSON.stringify(data));
-    console.log(data);
     axios
       .post(
         `${process.env.REACT_APP_BACKEND_URL}/after_login/restaurant/setup_with_account_creation`,
@@ -245,7 +245,7 @@ function CreateRestaurant() {
         }
       )
       .then((res) => {
-        console.log(res);
+        setRestaurantBranchId(res.data.createdbranchesDetail[0].id)
       })
       .catch((error) => {
         alert(error.message);
@@ -394,15 +394,18 @@ function CreateRestaurant() {
             />
           )}
           {showAddProduct && (
-            <AddProduct
-              categoryArray={categoryArray}
-              setCategory={setCategory}
-              productsArray={productsArray}
-              setProductsArray={setProductsArray}
-              setshowAddProduct={setshowAddProduct}
-              setshowWebsiteImages={setshowWebsiteImages}
-            />
-          )}
+            <>
+              <AddProduct
+                categoryArray={categoryArray}
+                setCategory={setCategory}
+                productsArray={productsArray}
+                setProductsArray={setProductsArray}
+                setshowAddProduct={setshowAddProduct}
+                setshowWebsiteImages={setshowWebsiteImages}
+                restaurantbranchid={restaurantbranchid}
+                setRestaurantBranchId={setRestaurantBranchId}
+              />
+            </>)}
         </Jumbotron>
       </div>
     </>
@@ -410,3 +413,4 @@ function CreateRestaurant() {
 }
 
 export default CreateRestaurant;
+
