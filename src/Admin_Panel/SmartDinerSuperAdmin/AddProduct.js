@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
+import React, { useState,useEffect } from "react";
 import ProductForm from "./ProductForm";
 import axios from "axios";
 import Autocomplete from 'react-autocomplete';
@@ -27,6 +26,7 @@ function AddProduct({
 
   const [categoryName, setCategoryName] = useState("");
   const [categoryList, setCategoryList] = useState([]);
+  const [selectedCategoryList, setSelectedCategoryList] = useState([]);
   const [selectedCategoryId, setSelectedCategoryId] = useState(0);
 
   const [selectedCategory, setSelectedCategory] = useState("");
@@ -71,6 +71,7 @@ function AddProduct({
   };
 
   const newProductFormSubmit = () => {
+    
     const data = {
       category: selectedCategory,
       name: name,
@@ -109,6 +110,8 @@ function AddProduct({
     setdiscount("");
     setimage("");
     setMenuImgUrl("");
+    setGst("");
+    setPriceGst("");
   };
 
   const editProduct = (index) => {
@@ -116,16 +119,17 @@ function AddProduct({
     setdescription(productsArray[index].description);
     setshortDescription(productsArray[index].shortDescription);
     setType(productsArray[index].type);
-    setGst(productsArray[index].gst);
-    setPriceGst(productsArray[index].pricegst);
     setprice(productsArray[index].price);
+    setGst(productsArray[index].gst);
     setdiscount(productsArray[index].discount);
-    setimage(productsArray[index].image);  
+    setimage(productsArray[index].image);
+    setPriceGst(productsArray[index].pricegst);
     setMenuImgUrl(productsArray[index].menuimgurl);
     setselectedProduct(index);
   };
 
   const editProductFormSubmit = () => {
+    console.log("edit product")
     const data = {
       category: selectedCategory,
       name: name,
@@ -186,6 +190,7 @@ function AddProduct({
             Category List:
             <ul className="col-lg-12 mt-20">
               {categoryArray.map((category, index) => (
+
                 <h5
                   className={
                     category === selectedCategory
@@ -289,11 +294,12 @@ function AddProduct({
               }
               onSelect={
                 (val) => {
+                  setCategoryName(val)
+                  setSelectedCategoryList(selectedCategoryList.concat(val));
                   setCategory([
                     ...categoryArray,
                     val
                   ]);
-              
                   setCategoryName('');
                 }
               }
@@ -355,6 +361,9 @@ function AddProduct({
                         restaurantbranchid={restaurantbranchid}
                         setRestaurantBranchId={setRestaurantBranchId}
                         close={close}
+                        productsArray={productsArray}
+                        setProductsArray={setProductsArray}
+                        makeDataEmpty={makeDataEmpty}
                         productFormSubmit={newProductFormSubmit}
                       />
                     ) : (
@@ -415,6 +424,9 @@ function AddProduct({
                         restaurantbranchid={restaurantbranchid}
                         setRestaurantBranchId={setRestaurantBranchId}
                         close={close}
+                        productsArray={productsArray}
+                        setProductsArray={setProductsArray}
+                        makeDataEmpty={makeDataEmpty}
                         productFormSubmit={editProductFormSubmit}
                       />
                     </div>
