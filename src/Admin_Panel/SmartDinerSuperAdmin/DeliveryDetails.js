@@ -64,6 +64,15 @@ function DeliveryDetails({
               value={branch.deliveryDistance}
             />
           </h4>
+          <h4 className="col-lg-8">
+            Delivery Charges :
+            <input
+              type="text"
+              name="deliveryCharge"
+              value={branch.deliveryCharges}
+            />
+          </h4>
+
           <h4 className="col-lg-12">Delivery Slots : </h4>
           <div
             className="col-lg-8 d-flex justify-content-around flex-wrap mb-10"
@@ -118,6 +127,22 @@ function DeliveryDetails({
               Add more slots
             </button>
           </div>
+          <h4 className="col-lg-8">
+            Latitude :
+            <input
+              type="text"
+              name="latitude"
+              value={branch.latitude}
+            />
+          </h4>
+          <h4 className="col-lg-8">
+            Longitude :
+            <input
+              type="text"
+              name="longitude"
+              value={branch.longitude}
+            />
+          </h4>
         </div>
       ))}
       <div className="col-lg-12 d-flex align-items-center">
