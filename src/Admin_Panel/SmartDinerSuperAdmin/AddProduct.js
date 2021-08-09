@@ -185,6 +185,14 @@ function AddProduct({
       <h2>Product Details</h2>
       <div className="row" style={{ borderTop: "1px dashed #b3b3b3" }}>
         <div className="col-lg-12 d-flex justify-content-between"></div>
+        <div className="col-lg-12 d-flex align-items-center mt-20">
+          <button className="btn next-btn" onClick={goBack}>
+            Back
+          </button>
+          <button className="btn next-btn" onClick={goNext}>
+            Next
+          </button>
+        </div>
         <div className="col-lg-4 col-md-4">
           <h4 className="col-lg-12 category-section">
             Category List:

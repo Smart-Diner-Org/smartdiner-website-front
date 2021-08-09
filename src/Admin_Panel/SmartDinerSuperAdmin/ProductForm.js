@@ -228,12 +228,22 @@ function ProductForm({
             onChange={(e) => setshortDescription(e.target.value)}
           />
         </h4>
-        <h4 className="col-lg-12">
+       <h4 className="col-lg-12">
           Type :
-        <select value={type} onChange={(e) => settype(e.target.value)}>
-            <option value={1}>Veg</option>
-            <option value={2}>Non-Veg</option>
-          </select>
+          <div onChange={(e) => settype(e.target.value)}>
+            <input 
+              type="radio"
+              value="1"
+              name="type"
+            /> 
+              Veg
+            <input 
+              type="radio"
+              value="2"
+              name="type"
+            />
+              Non-Veg
+          </div>
         </h4>
         <div className="row">
           <h4 className="col">
