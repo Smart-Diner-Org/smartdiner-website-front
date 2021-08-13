@@ -136,7 +136,7 @@ function Footer() {
             <h4 style={{ color: "white" }}>
               Let's talk @{" "}
               <a
-                href="tel:+917904465474"
+                href="tel:+918050795791"
                 onClick={() => {
                   ReactGA.event({
                     category: "In footer",
@@ -146,7 +146,22 @@ function Footer() {
                 }}
                 target="blank"
               >
-                +91 7904465474
+                
+                +91 8050795791
+              </a>
+              {" , "}
+              <a
+                href="tel:+918660181992"
+                onClick={() => {
+                  ReactGA.event({
+                    category: "In footer",
+                    action: "Clicked Mobile number",
+                    transport: "beacon",
+                  });
+                }}
+                target="blank"
+              >
+                +91 8660181992
               </a>
             </h4>
           </div>
@@ -186,7 +201,7 @@ function Footer() {
                     </Link>
                   </li>
                   {/*<li><a href="/">Legal Documents</a></li> 
-								<li><a href="/">Pricing</a></li>*/}
+                <li><a href="/">Pricing</a></li>*/}
                   <li>
                     <a
                       href="mailto:contact@smartdiner.co"
