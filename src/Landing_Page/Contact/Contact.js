@@ -207,7 +207,7 @@ function Contact() {
                 <i class="lni lni-phone"></i>
                 <h6>
                   <a
-                    href="tel:+917904465474"
+                    href="tel:+918050795791"
                     onClick={() => {
                       ReactGA.event({
                         category: "In Contact page",
@@ -217,7 +217,22 @@ function Contact() {
                     }}
                     target="blank"
                   >
-                    +91 7904465474
+                    +91 8050795791
+                  </a>
+                </h6>
+                <h6>  
+                  <a
+                    href="tel:+918660181992"
+                    onClick={() => {
+                      ReactGA.event({
+                        category: "In Contact page",
+                        action: "Clicked Mobile number Link",
+                        transport: "beacon",
+                      });
+                    }}
+                    target="blank"
+                  >
+                    +91 8660181992
                   </a>
                 </h6>
                 <p>Mon to Fri 9am to 6 pm</p>
