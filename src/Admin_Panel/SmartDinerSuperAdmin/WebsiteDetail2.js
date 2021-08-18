@@ -18,6 +18,8 @@ function WebsiteDetail2({
   isPaymentGateway,
   setisPreBooking,
   isPreBooking,
+  isShouldCalculateGst,
+  setisShouldCalculateGst,
   setshowwebsiteDetail2,
   setshowWebsiteImages,
 }) {
@@ -86,6 +88,20 @@ function WebsiteDetail2({
               e.target.value === "true"
                 ? setisRunningOrdersAvailable(true)
                 : setisRunningOrdersAvailable(false)
+            }
+          >
+            <option value={true}>Yes</option>
+            <option value={false}>No</option>
+          </select>
+        </h4>
+        <h4 className="col-lg-12">
+          Gst :
+          <select
+            value={isShouldCalculateGst}
+            onChange={(e) =>
+              e.target.value === "true"
+                ? setisShouldCalculateGst(true)
+                : setisShouldCalculateGst(false)
             }
           >
             <option value={true}>Yes</option>

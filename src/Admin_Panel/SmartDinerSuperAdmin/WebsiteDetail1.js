@@ -12,6 +12,12 @@ function WebsiteDetail1({
   setsecondaryColor,
   setshowDeliveryDetails,
   setshowwebsiteDetail2,
+  discountOnMrp,
+  setDiscountOnMrp,
+  minorderamt,
+  setMinOrderAmt,
+  packagingcharge,
+  setPackagingCharge
 }) {
   const goNext = () => {
     setshowwebsiteDetail2(true);
@@ -60,7 +66,31 @@ function WebsiteDetail1({
             onChange={(e) => setsecondaryColor(e.target.value)}
           />
         </h4>
-
+        <h4 className="col-lg-8 ">
+          Discount on Mrp :
+          <input
+            type="number"
+            value={discountOnMrp}
+            onChange={(e) => setDiscountOnMrp(e.target.value)}
+          />
+        </h4>
+        <h4 className="col-lg-8 ">
+          order Amount(Minimum) :
+          <input
+            type="number"
+            value={minorderamt}
+            onChange={(e) => setMinOrderAmt(e.target.value)}
+          />
+        </h4>
+        <h4 className="col-lg-8 ">
+          Packaging Charges :
+          <input
+            type="number"
+            value={packagingcharge}
+            onChange={(e) => setPackagingCharge(e.target.value)}
+          />
+        </h4>
+        
         <div className="col-lg-12 d-flex align-items-center">
           <button className="btn next-btn" onClick={goBack}>
             Back
