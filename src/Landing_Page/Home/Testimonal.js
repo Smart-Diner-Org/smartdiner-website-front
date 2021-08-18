@@ -54,7 +54,7 @@ function Testimonal() {
       {/* <!--================ End Testimonial Area =================--> */}
 
       {/* <!--================ Start Testimonial Area =================--> */}
-      <section className="customers_area pt-60 section-top-border">
+      <section className="customers_area section-top-border">
         <div className="container">
           <div className="row justify-content-center ">
             <div className="col-lg-12">
@@ -66,7 +66,7 @@ function Testimonal() {
         </div>
       </section>
 
-      <section className="brand-area pb-40 ">
+      <section className="brand-area mt-0 pb-60 ">
         <div className="">
           <div className="row customer-items">
             <Carousel
