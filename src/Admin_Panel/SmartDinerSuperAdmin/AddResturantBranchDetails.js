@@ -242,11 +242,26 @@ function AddResturantBranchDetails({
           </Popover>
         </Overlay>
         <h2>Restaurant Branch Details</h2>
+        <div className="row" style={{ borderTop: "1px dashed #b3b3b3" }}>
+        <div className="col-lg-12 d-flex justify-content-around flex-wrap align-items-center">
+          <button className="btn next-btn" onClick={goBack}>
+            Back
+          </button>
+          <button
+            className="btn next-btn add-new-branch-btn"
+            onClick={addNewBranch}
+          >
+            Add New Branch
+          </button>
+          <button className="btn next-btn" onClick={goNext}>
+            Next
+          </button>
+        </div>
         {resturantBranchDetails.map((branch, index) => (
           <>
             <div
               className="row"
-              style={{ borderTop: "1px dashed #b3b3b3" }}
+              
               onChange={(e) => formHandleChange(e, index)}
               onFocus={() => setToolTip(false)}
             >
@@ -454,6 +469,7 @@ function AddResturantBranchDetails({
             Next
           </button>
         </div>
+      </div>
       </div>
     );
   }

@@ -25,10 +25,19 @@ function DeliveryDetails({
   return (
     <div className="container add-customer">
       <h2>Restaurant Branch Delivery Details</h2>
+      <div className="row" style={{ borderTop: "1px dashed #b3b3b3" }}>
+      <div className="col-lg-12 d-flex align-items-center">
+        <button className="btn next-btn" onClick={goBack}>
+          Back
+        </button>
+        <button className="btn next-btn" onClick={goNext}>
+          Next
+        </button>
+      </div>
       {deliveryDetails.map((branch, index) => (
         <div
           className="row"
-          style={{ borderTop: "1px dashed #b3b3b3" }}
+          
           onChange={(e) => formHandleChange(e, index)}
         >
           <h3 className="col-lg-12 mt-20">Branch {branch.branchName}:</h3>
@@ -153,6 +162,7 @@ function DeliveryDetails({
           Next
         </button>
       </div>
+    </div>
     </div>
   );
 }
