@@ -23,6 +23,7 @@ function CreateRestaurant() {
   const [showcustomerDetails, setCustomerDetails] = useState(true);
 
   const [restaurantName, setRestaurantName] = useState("");
+  const [restaurantbranchid, setRestaurantBranchId] = useState("");
   const [websiteURL, setWebsiteURL] = useState("");
   const [logoImg, setLogoImg] = useState(null);
   const [logoUrl, setLogoUrl] = useState(null);
@@ -108,6 +109,9 @@ function CreateRestaurant() {
   const [pageDescription, setpageDescription] = useState(null);
   const [primaryColor, setprimaryColor] = useState("#000000");
   const [secondaryColor, setsecondaryColor] = useState("#000000");
+  const [discountOnMrp, setDiscountOnMrp] = useState("");
+  const [minorderamt, setMinOrderAmt] = useState("");
+  const [packagingcharge, setPackagingCharge] = useState("");
 
   const [showwebsiteDetail2, setshowwebsiteDetail2] = useState(false);
   const [isPreBooking, setisPreBooking] = useState(false);
@@ -116,6 +120,7 @@ function CreateRestaurant() {
   const [isRunningOrdersAvailable, setisRunningOrdersAvailable] = useState(
     true
   );
+  const [isShouldCalculateGst,setisShouldCalculateGst] = useState(true);
   const [preBookingPriorTime, setpreBookingPriorTime] = useState("1");
   const [isDeliveryAvailable, setisDeliveryAvailable] = useState(true);
   const [hasCustomInfo, sethasCustomInfo] = useState(false);
@@ -144,7 +149,10 @@ function CreateRestaurant() {
         deliveryPostalcodes: "",
         deliveryDistance: "",
         deliveryLocationsToDisplay: "",
+        deliveryCharge:"",
         deliverSlots: [{ from: "", to: "" }],
+        latitude: "",
+        longitude: "",
       });
     });
     setDeliveryDetails(deliveryDetails);
@@ -172,9 +180,12 @@ function CreateRestaurant() {
         branchDeliveryDistance: Number(deliveryDetails[index].deliveryDistance),
         branchDeliveryLocationsToDisplay:
           deliveryDetails[index].deliveryLocationsToDisplay,
+        branchDeliveryCharge: deliveryDetails[index].deliveryCharge,
         branchDeliverySlots: (deliveryDetails[index].deliverSlots.map((slot) => {
           return `${slot.from} - ${slot.to}`;
         })).join(","),
+        branchLatitude: deliveryDetails[index].latitude,
+        branchlongitude: deliveryDetails[index].longitude,
       };
     });
 
@@ -230,10 +241,13 @@ function CreateRestaurant() {
       hasCustomisationInfo: hasCustomInfo,
       customisationInfoContent: customInfo,
       isDeliveryAvailable: isDeliveryAvailable,
+      isShouldCalculateGst: isShouldCalculateGst,
       pageTitle: pageTitle,
+      discountOnMrp: discountOnMrp,
+      MinOrderAmt: minorderamt,
+      PackagingCharge: packagingcharge
     };
     sessionStorage.setItem("data", JSON.stringify(data));
-    console.log(data);
     axios
       .post(
         `${process.env.REACT_APP_BACKEND_URL}/after_login/restaurant/setup_with_account_creation`,
@@ -245,7 +259,7 @@ function CreateRestaurant() {
         }
       )
       .then((res) => {
-        console.log(res);
+        setRestaurantBranchId(res.data.createdbranchesDetail[0].id)
       })
       .catch((error) => {
         alert(error.message);
@@ -345,6 +359,12 @@ function CreateRestaurant() {
               setprimaryColor={setprimaryColor}
               secondaryColor={secondaryColor}
               setsecondaryColor={setsecondaryColor}
+              discountOnMrp={discountOnMrp}
+              setDiscountOnMrp={setDiscountOnMrp}
+              minorderamt={minorderamt}
+              setMinOrderAmt={setMinOrderAmt}
+              packagingcharge={packagingcharge}
+              setPackagingCharge={setPackagingCharge}
             />
           )}
           {showwebsiteDetail2 && (
@@ -366,6 +386,8 @@ function CreateRestaurant() {
               isPaymentGateway={isPaymentGateway}
               setisPreBooking={setisPreBooking}
               isPreBooking={isPreBooking}
+              isShouldCalculateGst={isShouldCalculateGst}
+              setisShouldCalculateGst={setisShouldCalculateGst}
               setshowwebsiteDetail2={setshowwebsiteDetail2}
               setshowWebsiteImages={setshowWebsiteImages}
             />
@@ -394,15 +416,18 @@ function CreateRestaurant() {
             />
           )}
           {showAddProduct && (
-            <AddProduct
-              categoryArray={categoryArray}
-              setCategory={setCategory}
-              productsArray={productsArray}
-              setProductsArray={setProductsArray}
-              setshowAddProduct={setshowAddProduct}
-              setshowWebsiteImages={setshowWebsiteImages}
-            />
-          )}
+            <>
+              <AddProduct
+                categoryArray={categoryArray}
+                setCategory={setCategory}
+                productsArray={productsArray}
+                setProductsArray={setProductsArray}
+                setshowAddProduct={setshowAddProduct}
+                setshowWebsiteImages={setshowWebsiteImages}
+                restaurantbranchid={restaurantbranchid}
+                setRestaurantBranchId={setRestaurantBranchId}
+              />
+            </>)}
         </Jumbotron>
       </div>
     </>
@@ -410,3 +435,4 @@ function CreateRestaurant() {
 }
 
 export default CreateRestaurant;
+

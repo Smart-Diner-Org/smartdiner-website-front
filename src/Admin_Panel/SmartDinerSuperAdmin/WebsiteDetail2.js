@@ -18,6 +18,8 @@ function WebsiteDetail2({
   isPaymentGateway,
   setisPreBooking,
   isPreBooking,
+  isShouldCalculateGst,
+  setisShouldCalculateGst,
   setshowwebsiteDetail2,
   setshowWebsiteImages,
 }) {
@@ -36,6 +38,14 @@ function WebsiteDetail2({
     <div className="container add-customer website-options">
       <h2>Website Options</h2>
       <div className="row" style={{ borderTop: "1px dashed #b3b3b3" }}>
+        <div className="col-lg-12 d-flex align-items-center">
+          <button className="btn next-btn" onClick={goBack}>
+            Back
+          </button>
+          <button className="btn next-btn" onClick={goNext}>
+            Next
+          </button>
+        </div>
         <h4 className="col-lg-12">
           Delivery Available :
           <select
@@ -86,6 +96,20 @@ function WebsiteDetail2({
               e.target.value === "true"
                 ? setisRunningOrdersAvailable(true)
                 : setisRunningOrdersAvailable(false)
+            }
+          >
+            <option value={true}>Yes</option>
+            <option value={false}>No</option>
+          </select>
+        </h4>
+        <h4 className="col-lg-12">
+          Gst :
+          <select
+            value={isShouldCalculateGst}
+            onChange={(e) =>
+              e.target.value === "true"
+                ? setisShouldCalculateGst(true)
+                : setisShouldCalculateGst(false)
             }
           >
             <option value={true}>Yes</option>

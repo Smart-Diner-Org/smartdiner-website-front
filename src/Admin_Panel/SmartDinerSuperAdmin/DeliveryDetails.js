@@ -25,10 +25,19 @@ function DeliveryDetails({
   return (
     <div className="container add-customer">
       <h2>Restaurant Branch Delivery Details</h2>
+      <div className="row" style={{ borderTop: "1px dashed #b3b3b3" }}>
+      <div className="col-lg-12 d-flex align-items-center">
+        <button className="btn next-btn" onClick={goBack}>
+          Back
+        </button>
+        <button className="btn next-btn" onClick={goNext}>
+          Next
+        </button>
+      </div>
       {deliveryDetails.map((branch, index) => (
         <div
           className="row"
-          style={{ borderTop: "1px dashed #b3b3b3" }}
+          
           onChange={(e) => formHandleChange(e, index)}
         >
           <h3 className="col-lg-12 mt-20">Branch {branch.branchName}:</h3>
@@ -64,6 +73,15 @@ function DeliveryDetails({
               value={branch.deliveryDistance}
             />
           </h4>
+          <h4 className="col-lg-8">
+            Delivery Charges :
+            <input
+              type="text"
+              name="deliveryCharge"
+              value={branch.deliveryCharges}
+            />
+          </h4>
+
           <h4 className="col-lg-12">Delivery Slots : </h4>
           <div
             className="col-lg-8 d-flex justify-content-around flex-wrap mb-10"
@@ -118,6 +136,22 @@ function DeliveryDetails({
               Add more slots
             </button>
           </div>
+          <h4 className="col-lg-8">
+            Latitude :
+            <input
+              type="text"
+              name="latitude"
+              value={branch.latitude}
+            />
+          </h4>
+          <h4 className="col-lg-8">
+            Longitude :
+            <input
+              type="text"
+              name="longitude"
+              value={branch.longitude}
+            />
+          </h4>
         </div>
       ))}
       <div className="col-lg-12 d-flex align-items-center">
@@ -128,6 +162,7 @@ function DeliveryDetails({
           Next
         </button>
       </div>
+    </div>
     </div>
   );
 }

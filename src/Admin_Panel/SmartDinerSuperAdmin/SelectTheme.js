@@ -24,6 +24,11 @@ function SelectTheme({
   return (
     <div className="container theme-select">
       <h2>Select your website design :</h2>
+      <div className="col-lg-12 d-flex align-items-center">
+        <button className="btn next-btn" onClick={goBack}>
+          Back
+        </button>
+      </div>
       <div className="row d-flex justify-content-between">
         {themes.map((theme, index) => (
           <Card className="col-lg-3 col-md-5" style={{ width: "inherit" }}>
