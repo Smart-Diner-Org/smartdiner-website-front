@@ -19,7 +19,7 @@ function CreateRestaurant() {
   const [customerMobile, setcustomerMobile] = useState("");
   const [customerEmail, setcustomerEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [roleID, setRoleID] = useState(roles_and_IDs["Super Admin"]);
+  const [roleID, setRoleID] = useState(roles_and_IDs["Smart Diner Super Admin"]);
   const [showcustomerDetails, setCustomerDetails] = useState(true);
 
   const [restaurantName, setRestaurantName] = useState("");

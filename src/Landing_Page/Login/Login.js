@@ -5,6 +5,8 @@ import VideoPlayer from "../Home/VideoPlayer";
 import ReactGA from "react-ga";
 import { useLocation, Link } from "react-router-dom";
 import Cookies from "js-cookie";
+import { roles_and_IDs } from "../../helpers/constants";
+
 
 function Login() {
   const apiLink = `${process.env.REACT_APP_BACKEND_URL}/`;
@@ -76,6 +78,7 @@ function Login() {
     const data = {
       email: state.email,
       password: state.password,
+      roleId: (state.email === "smartdinersuperadmin@smartdiner.co")?roles_and_IDs["Smart Diner Super Admin"]:roles_and_IDs["Super Admin"]
     };
 
     ReactGA.event({
@@ -89,6 +92,7 @@ function Login() {
       .then((res) => {
         // roleId 6 is for delivery partner role.
         // If the login is for delivery partner - then we can redirect to the link provided by server.
+
         if (
           res.status === 200 &&
           res.data.redirectLink !== undefined &&
@@ -109,15 +113,16 @@ function Login() {
             ...state,
             canRedirectToHome: true,
           });
+
         }
       })
       .catch((error) => {
+        
         setState({ ...state, successMessage: null });
         if (error && error.response && error.response.data) {
           let er = error.response.data.message;
-          console.log(er);
           setState({ ...state, errorMessage: er });
-        } else console.log(error);
+        } else {console.log(error);}
       });
   };
 
