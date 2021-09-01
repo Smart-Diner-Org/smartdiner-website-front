@@ -110,4 +110,5 @@ export const roles_and_IDs = {
   "Delivery Agent": "3",
   Customer: "4",
   "Smart Diner Super Admin": "5",
+   DeliveryPartnerAdmin: 6
 };
