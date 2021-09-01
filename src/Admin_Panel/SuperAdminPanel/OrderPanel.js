@@ -106,6 +106,7 @@ export default class OrderPanel extends Component {
                   showAll={this.state.showAll}
                   stage_id={order.stage_id}
                   isMobile={this.props.isMobile}
+                  deliveryStageId={this.props.deliveryStageId}
                 />
               );
             } else if (
@@ -138,6 +139,7 @@ export default class OrderPanel extends Component {
                   showAll={this.state.showAll}
                   stage_id={order.stage_id}
                   isMobile={this.props.isMobile}
+                  deliveryStageId={this.props.deliveryStageId}
                 />
               );
             } else if (this.state.showAll) {
@@ -158,6 +160,7 @@ export default class OrderPanel extends Component {
                   showAll={this.state.showAll}
                   stage_id={order.stage_id}
                   isMobile={this.props.isMobile}
+                  deliveryStageId={this.props.deliveryStageId}
                 />
               );
             } else if (
@@ -180,6 +183,7 @@ export default class OrderPanel extends Component {
                   showAll={this.state.showAll}
                   stage_id={order.stage_id}
                   isMobile={this.props.isMobile}
+                  deliveryStageId={this.props.deliveryStageId}
                 />
               );
             }

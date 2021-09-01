@@ -22,6 +22,26 @@ export const orderStatgeText = {
   9: "Cancelled",
 };
 
+export const deliveryStage = {
+  Requested: 1,
+  Accepted: 2,
+  Rejected: 3,
+  Reassigned: 4,
+  Completed: 5,
+  Delayed: 6,
+  Undelivered: 7,
+}
+
+export const deliveryStageStatus = {
+  1: "Looking for a delivery person",
+  2: "delivery person <name> & <mobile>",
+  3: "Delivery got rejected",
+  4: "Delivery reassigned",
+  5: "Delivery completed",
+  6: "Successfully Delivered",
+  7: "Undelivered",
+}
+
 export const deliveryPreferences = {
   inHouse: "1",
   service: "2",

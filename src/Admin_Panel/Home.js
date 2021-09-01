@@ -309,6 +309,8 @@ export default class Home extends Component {
                   isMobile={this.state.isMobile}
                   openSideMenu={this.state.openSideMenu}
                   setOpenSideMenu={this.setOpenSideMenu}
+                  delivery_partner_preference_id={this.state.restaurantInfo.delivery_partner_preference_id}
+                  deliveryStageId={this.state.orders[0].delivery_requests[0].delivery_stage_id}
                 />
                 {!this.state.isMobile && <Footer />}
               </Suspense>

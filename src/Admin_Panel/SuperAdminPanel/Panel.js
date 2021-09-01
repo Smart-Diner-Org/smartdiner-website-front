@@ -56,6 +56,7 @@ export default class Panel extends Component {
             openSideMenu={this.props.openSideMenu}
             setOpenSideMenu={this.props.setOpenSideMenu}
           />
+       
           <OrderPanel
             selectedBtn={this.props.selectedBtn}
             orders={this.props.orders}
@@ -64,6 +65,7 @@ export default class Panel extends Component {
             toggelBag={this.toggelBag}
             selectedCard={this.state.selectedId}
             isMobile={this.props.isMobile}
+            deliveryStageId={this.props.deliveryStageId}
           />
         </div>
 
@@ -96,6 +98,7 @@ export default class Panel extends Component {
                     delivery_partner_preference_id={
                       this.props.delivery_partner_preference_id
                     }
+                    deliveryStageId={this.props.deliveryStageId}
                   />
               );
           })}
