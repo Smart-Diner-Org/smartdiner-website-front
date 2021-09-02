@@ -21,6 +21,7 @@ export default class Home extends Component {
 
     this.apiLink = `${process.env.REACT_APP_BACKEND_URL}/`;
     this.state = {
+      delivery_stage_id: 0,
       isLoaded: false,
       isLoggedOut: false,
       restaurantInfo: [{}],
@@ -90,7 +91,7 @@ export default class Home extends Component {
                   });
                   break;
                 default:
-                  let er = error?.response?.data?.message;
+                  let er = error ?.response ?.data ?.message;
                   console.log(er);
                   this.setState({ errorMessage: er });
                   break;
@@ -107,10 +108,23 @@ export default class Home extends Component {
               }
             )
             .then((res2) => {
+              var deliveryRequest, deliverysatgeId;
               this.setState({
                 orders: res2.data.orders,
+
+
+
+                // delivery_stage_id: res2.data.orders.delivery_requests[0].delivery_stage_id,
                 isLoaded: true,
               });
+              // if (res2.data.orders.delivery_requests && res2.data.orders.delivery_requests.length > 0) {
+              //   deliveryRequest = res2.data.orders.delivery_requests[0];
+              //   deliverysatgeId = deliveryRequest.delivery_stage_id;
+
+              //   this.setState({ delivery_stage_id: res2.data.orders.delivery_requests[0].delivery_person_id })
+                
+              //   console.log("state"+this.state.delivery_stage_id)
+              // }
               this.count(res2.data.orders);
             })
             .catch((error2) => {
@@ -124,7 +138,7 @@ export default class Home extends Component {
                   });
                   break;
                 default:
-                  let er = error2?.response?.data?.message;
+                  let er = error2 ?.response ?.data ?.message;
                   console.log(er);
                   this.setState({ errorMessage: er });
                   break;
@@ -145,7 +159,7 @@ export default class Home extends Component {
               });
             })
             .catch((error) => {
-              let er = error?.response?.data?.message;
+              let er = error ?.response ?.data ?.message;
               console.log(er);
               this.setState({ errorMessage: er });
             });
@@ -154,7 +168,7 @@ export default class Home extends Component {
         default:
           alert("Missing Role ID");
       }
-    } catch {}
+    } catch { }
   }
 
   count(orders) {
@@ -310,8 +324,10 @@ export default class Home extends Component {
                   openSideMenu={this.state.openSideMenu}
                   setOpenSideMenu={this.setOpenSideMenu}
                   delivery_partner_preference_id={this.state.restaurantInfo.delivery_partner_preference_id}
-                  deliveryStageId={this.state.orders[0].delivery_requests[0].delivery_stage_id}
+                  // deliveryStageId={
+                  //   this.state.orders.delivery_requests[0].delivery_person_id}
                 />
+                
                 {!this.state.isMobile && <Footer />}
               </Suspense>
             </div>

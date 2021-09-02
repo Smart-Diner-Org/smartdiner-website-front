@@ -97,20 +97,17 @@ export default class OrderCard extends Component {
                       ></div>
                       <div className="row">
                         <p className="col-auto">
-                          {console.log("Asdasdsdasda"+this.props.deliveryStageId)}
-                          <label className="ml-auto delivery-status">{deliveryStageStatus[this.props.deliveryStageId]}</label>
+                          {this.props.deliveryStageId != 0 && (
+                            <label className="ml-auto delivery-status">{deliveryStageStatus[this.props.deliveryStageId]}</label>
+                         )}
                         </p>
                       </div>
                       <div className="row">
 
                         <p className="col-auto">OrderID #{this.props.id}</p>
-
                         {this.props.preBookingDetail && (
-
                           <label className="ml-auto pre-order">Pre-Order</label>
                         )}
-
-
                       </div>
                       <div className="row ">
                         <p className="col-auto">{this.props.items} item</p>

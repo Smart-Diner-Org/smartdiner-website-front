@@ -65,7 +65,6 @@ export default class Panel extends Component {
             toggelBag={this.toggelBag}
             selectedCard={this.state.selectedId}
             isMobile={this.props.isMobile}
-            deliveryStageId={this.props.deliveryStageId}
           />
         </div>
 
@@ -98,7 +97,7 @@ export default class Panel extends Component {
                     delivery_partner_preference_id={
                       this.props.delivery_partner_preference_id
                     }
-                    deliveryStageId={this.props.deliveryStageId}
+                    deliveryStageId={order.delivery_requests && order.delivery_requests.length > 0 ? order.delivery_requests[0].delivery_stage_id : 0}
                   />
               );
           })}
