@@ -56,6 +56,7 @@ export default class Panel extends Component {
             openSideMenu={this.props.openSideMenu}
             setOpenSideMenu={this.props.setOpenSideMenu}
           />
+       
           <OrderPanel
             selectedBtn={this.props.selectedBtn}
             orders={this.props.orders}
@@ -96,6 +97,7 @@ export default class Panel extends Component {
                     delivery_partner_preference_id={
                       this.props.delivery_partner_preference_id
                     }
+                    deliveryStageId={order.delivery_requests && order.delivery_requests.length > 0 ? order.delivery_requests[0].delivery_stage_id : 0}
                   />
               );
           })}
