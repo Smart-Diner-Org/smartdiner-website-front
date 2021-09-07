@@ -5,19 +5,19 @@ import Delivery from "./Delivery";
 import Bill from "./Bill";
 import "../assets/css/bag.css";
 import getPercentageFromBaseAndFinalValue from "../../helpers/CommonFunctions";
-
+import { deliveryStageStatus } from "../../helpers/constants";
 
 class Bag extends Component {
 
 
   render() {
 
-    const [totalAfterMrpDiscount, dicountedMrpPercentage, gstAmount,delivery_charge_gst] = getPercentageFromBaseAndFinalValue(
+    const [totalAfterMrpDiscount, dicountedMrpPercentage, gstAmount, delivery_charge_gst] = getPercentageFromBaseAndFinalValue(
       this.props.total_price,
       this.props.total_mrp_price,
       this.props.delivery_charge,
       this.props.gstPercentage,
-      
+
     );
 
     return (
@@ -33,7 +33,16 @@ class Bag extends Component {
               </button>
             </div>
             <div className="col-auto">
-              <label className="mt-10">Order Bag #{this.props.id}</label>
+              <label className="mt-10">Order ID #{this.props.id}</label>
+            </div>
+
+            {/* <div className="row"> */}
+            <div className="ml-150 col-auto">
+
+              {this.props.deliveryStageId != 0 && (
+                <label className="ml-auto delivery-status">{deliveryStageStatus[this.props.deliveryStageId]}</label>
+
+              )}
             </div>
           </div>
         </header>
@@ -63,6 +72,7 @@ class Bag extends Component {
           mobile={this.props.mobile}
           email={this.props.email}
         />
+
         <Delivery
           delivery_partner_preference_id={
             this.props.delivery_partner_preference_id
@@ -72,6 +82,7 @@ class Bag extends Component {
           stage_id={this.props.stage_id}
           cancelOrder={this.props.cancelOrder}
           updateStage={this.props.updateStage}
+
         />
       </div>
     );

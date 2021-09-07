@@ -86,7 +86,10 @@ class Delivery extends Component {
             <>
               <button
                 style={{ backgroundColor: "#08a860" }}
-                onClick={this.acceptOrder}
+                onClick={
+                  this.acceptOrder
+                  // this.setState({ showDeliveyModal: true })
+                }
               >
                 Accept Order
               </button>
