@@ -21,11 +21,12 @@ export const dessertdrizzleItemImg =
 
 export const karthik =
   "https://smart-diner.s3.ap-south-1.amazonaws.com/team/karthikraj+2.jpg";
-
+export const harith =
+  "https://smart-diner.s3.ap-south-1.amazonaws.com/team/harith+anand.jpeg";
   export const swathi =
   "https://smart-diner.s3.ap-south-1.amazonaws.com/team/swathi+profile.png";
-export const nithish = 
-   "https://smart-diner.s3.ap-south-1.amazonaws.com/team/nithish+kumar.png";
+export const nandhiniSiva = 
+  "https://smart-diner.s3.ap-south-1.amazonaws.com/team/nandhiniSiva.jpg";
 export const vinay =
   "https://smart-diner.s3.ap-south-1.amazonaws.com/team/vinay.jpg";
 export const anushree =
