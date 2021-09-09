@@ -15,7 +15,11 @@ class Delivery extends Component {
       this.props.delivery_partner_preference_id === deliveryPreferences["all"]
     ) {
       this.setState({ showDeliveyModal: true });
-    } else {
+    }
+    else if(this.props.delivery_partner_preference_id === deliveryPreferences["service"]){
+      this.requestDelivery(deliveryPreferences["service"]);
+    } 
+    else{
       this.props.updateStage(3, this.props.orderId);
       this.props.toggelBag();
     }
@@ -42,9 +46,17 @@ class Delivery extends Component {
           this.closeDeliverModal();
           this.props.updateStage(3, this.props.orderId);
           this.props.toggelBag();
+        })
+        .catch((error, message) => {
+          var errMessage = "Could not assign a delivery partner.";
+          if(error && error.response && error.response.data && error.response.data.message){
+            errMessage = errMessage + '\n' + error.response.data.message;
+          }
+          alert(errMessage);
         });
     } catch (e) {
       console.log(e);
+      alert("something Happened. Could not assign a delivery partner.\n"+e);
     }
   };
 

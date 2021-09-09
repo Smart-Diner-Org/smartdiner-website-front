@@ -30,16 +30,24 @@ export const deliveryStage = {
   Completed: 5,
   Delayed: 6,
   Undelivered: 7,
+  "reachedForPickup": 8,
+  "picked": 9,
+  "reachedForDelivery": 10,
+  "runnerCancelled": 11
 }
 
 export const deliveryStageStatus = {
   1: "Looking for a delivery person",
-  2: "delivery person <name> & <mobile>",
+  2: "Delivery person details:",
   3: "Delivery got rejected",
   4: "Delivery reassigned",
   5: "Delivery completed",
   6: "Successfully Delivered",
   7: "Undelivered",
+  8: "Delivery person reached store",
+  9: "Order got picked from the store",
+  10: "Delivery person reached customer place to deliver",
+  11: "Delivery person cancelled"
 }
 
 export const deliveryPreferences = {

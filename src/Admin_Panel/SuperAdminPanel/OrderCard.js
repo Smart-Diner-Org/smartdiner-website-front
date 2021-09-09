@@ -26,7 +26,12 @@ export default class OrderCard extends Component {
             ></div>
             <div className="row">
               <p className="col-auto">
-                <label className="ml-auto delivery-status">{deliveryStageStatus[this.props.deliveryStageId]}</label>
+                {this.props.deliveryStageId != 0 && (
+                  <label className="ml-auto delivery-status">{deliveryStageStatus[this.props.deliveryStageId]}</label>
+                )}
+                {this.props.deliveryPersonDetail && (
+                  <label className="ml-auto delivery-status">{this.props.deliveryPersonDetail}</label>
+                )}
               </p>
             </div>
             <div className="row">
@@ -100,6 +105,9 @@ export default class OrderCard extends Component {
                           {this.props.deliveryStageId != 0 && (
                             <label className="ml-auto delivery-status">{deliveryStageStatus[this.props.deliveryStageId]}</label>
                          )}
+                         {this.props.deliveryPersonDetail && (
+                          <label className="ml-auto delivery-status">{this.props.deliveryPersonDetail}</label>
+                        )}
                         </p>
                       </div>
                       <div className="row">

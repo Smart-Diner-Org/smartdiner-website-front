@@ -37,12 +37,15 @@ class Bag extends Component {
             </div>
 
             {/* <div className="row"> */}
-            <div className="ml-150 col-auto">
+            <div className="col-auto">
 
               {this.props.deliveryStageId != 0 && (
                 <label className="ml-auto delivery-status">{deliveryStageStatus[this.props.deliveryStageId]}</label>
 
               )}
+              {this.props.deliveryPersonDetail && (
+                <label className="ml-auto delivery-status">{this.props.deliveryPersonDetail}</label>
+                )}
             </div>
           </div>
         </header>

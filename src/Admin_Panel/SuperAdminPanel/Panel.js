@@ -98,6 +98,7 @@ export default class Panel extends Component {
                       this.props.delivery_partner_preference_id
                     }
                     deliveryStageId={order.delivery_requests && order.delivery_requests.length > 0 ? order.delivery_requests[0].delivery_stage_id : 0}
+                    deliveryPersonDetail={order.delivery_requests && order.delivery_requests.length > 0 && order.delivery_requests[0]['delivery_person']?(order.delivery_requests[0]['delivery_person']['role_id']=="3" ? (order.delivery_requests[0]['delivery_person']['name'] + ' - ' + order.delivery_requests[0]['delivery_person']['mobile']) : null):null}
                   />
               );
           })}
