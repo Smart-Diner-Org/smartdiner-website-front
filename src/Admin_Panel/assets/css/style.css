@@ -229,7 +229,19 @@
   margin-top: 5px;
   max-height: 25px;
 }
-
+.delivery-status {
+  font-size: 14px;
+  text-align: center;
+  color: #000466;
+  border: 1px solid #000466;
+  border-radius: 8px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  padding: 0 5px;
+  /*max-height: 25px;*/
+}
 .selected {
   height: 6px;
   width: inherit;

@@ -22,6 +22,11 @@ export default class OrderPanel extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
+  check(){
+    this.props.orders.map((val,index)=>{
+       return <>{console.log(val)}</>
+    })
+  }
   handleChange(event) {
     let { name, value } = event.target;
     value = new Date(value);
@@ -106,6 +111,8 @@ export default class OrderPanel extends Component {
                   showAll={this.state.showAll}
                   stage_id={order.stage_id}
                   isMobile={this.props.isMobile}
+                  deliveryStageId={order.delivery_requests && order.delivery_requests.length > 0?order.delivery_requests[0].delivery_stage_id:0}
+                  deliveryPersonDetail={order.delivery_requests && order.delivery_requests.length > 0 && order.delivery_requests[0]['delivery_person']?(order.delivery_requests[0]['delivery_person']['role_id']=="3" ? (order.delivery_requests[0]['delivery_person']['name'] + ' - ' + order.delivery_requests[0]['delivery_person']['mobile']) : null):null}
                 />
               );
             } else if (
@@ -138,6 +145,8 @@ export default class OrderPanel extends Component {
                   showAll={this.state.showAll}
                   stage_id={order.stage_id}
                   isMobile={this.props.isMobile}
+                  deliveryStageId={order.delivery_requests && order.delivery_requests.length > 0?order.delivery_requests[0].delivery_stage_id:0}
+                  deliveryPersonDetail={order.delivery_requests && order.delivery_requests.length > 0 && order.delivery_requests[0]['delivery_person']?(order.delivery_requests[0]['delivery_person']['role_id']=="3" ? (order.delivery_requests[0]['delivery_person']['name'] + ' - ' + order.delivery_requests[0]['delivery_person']['mobile']) : null):null}
                 />
               );
             } else if (this.state.showAll) {
@@ -158,6 +167,8 @@ export default class OrderPanel extends Component {
                   showAll={this.state.showAll}
                   stage_id={order.stage_id}
                   isMobile={this.props.isMobile}
+                  deliveryStageId={order.delivery_requests && order.delivery_requests.length > 0 ? order.delivery_requests[0].delivery_stage_id : 0}
+                  deliveryPersonDetail={order.delivery_requests && order.delivery_requests.length > 0 && order.delivery_requests[0]['delivery_person']?(order.delivery_requests[0]['delivery_person']['role_id']=="3" ? (order.delivery_requests[0]['delivery_person']['name'] + ' - ' + order.delivery_requests[0]['delivery_person']['mobile']) : null):null}
                 />
               );
             } else if (
@@ -180,6 +191,8 @@ export default class OrderPanel extends Component {
                   showAll={this.state.showAll}
                   stage_id={order.stage_id}
                   isMobile={this.props.isMobile}
+                  deliveryStageId={order.delivery_requests && order.delivery_requests.length > 0?order.delivery_requests[0].delivery_stage_id:0}
+                  deliveryPersonDetail={order.delivery_requests && order.delivery_requests.length > 0 && order.delivery_requests[0]['delivery_person']?(order.delivery_requests[0]['delivery_person']['role_id']=="3" ? (order.delivery_requests[0]['delivery_person']['name'] + ' - ' + order.delivery_requests[0]['delivery_person']['mobile']) : null):null}
                 />
               );
             }
