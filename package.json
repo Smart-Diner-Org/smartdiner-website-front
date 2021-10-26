@@ -35,7 +35,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy-testing": "npm run build && aws s3 sync ./build/ s3://testingsmartdiner.co/ --profile smartdiner",
+    "deploy-main": "npm run build && aws s3 sync ./build/ s3://smartdiner.co/ --profile smartdiner"
   },
   "eslintConfig": {
     "extends": "react-app"

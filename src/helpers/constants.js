@@ -92,6 +92,11 @@ export const smartDinerVideo = [
 
 export const customerList = [
   {
+    name: "Brijwasi Sweets",
+    url: "https://brijwasisweetschennai.com/",
+    logo: "https://smart-diner-client-images.s3.ap-south-1.amazonaws.com/brijwasi_sweets/logo.jpg",
+  },
+  {
     name: "The Uptown Arab Eatery",
     url: "https://theuae.in/",
     logo: "https://smart-diner-client-images.s3.ap-south-1.amazonaws.com/the_uae/logo.jpg",
