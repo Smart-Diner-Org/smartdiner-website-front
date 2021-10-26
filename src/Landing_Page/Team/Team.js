@@ -2,7 +2,8 @@ import React, { useEffect } from "react";
 import MemberCard from "./MemberCard";
 import { useLocation, Link } from "react-router-dom";
 import ReactGA from "react-ga";
-import { anushree, dharee, divya, sandesh, sharmi, vinay, nithish, karthik, swathi } from "../s3images";
+import Members from "./Members";
+import HelpingHands from "./HelpingHands";
 
 function Team() {
   const { pathname } = useLocation();
@@ -36,35 +37,16 @@ function Team() {
               {/* <!-- single carousel --> */}
 
               <div class="row align-items-center single-item">
-                <MemberCard
-                  name={"Sharmiladevi N S"}
-                  role={"Founder"}
-                  photo={sharmi}
-                  twitter={"https://twitter.com/sharmiladevins"}
-                  linkedin={"https://www.linkedin.com/in/sharmiladevi-n-s-a03589a2/"}
-                />
-                <MemberCard
-                  name={"Karthikraj"}
-                  role={"Interim CTO"}
-                  photo={karthik}
-                  linkedin={"https://www.linkedin.com/in/karthikrajduraisamy+2/"}
-                  twitter={"https://twitter.com/krajdsamy"}
-                />
-              
-                <MemberCard
-                  name={"Swathi P"}
-                  role={"Sales Executive"}
-                  photo={swathi}
-                  linkedin={"https://www.linkedin.com/in/swathi-p-103904187"}
-                  
-                />
-                <MemberCard 
-                  name={"Nithish Kumar"}
-                  role={"Tech Intern"}
-                  photo={nithish}
-                  linkedin={"https://www.linkedin.com/in/nithish-kumar-1652ba18b/"}
-                  instagram={"https://www.instagram.com/nithish_170/"}
-                />
+                {Members.map(data=><MemberCard 
+                  key={data.id}
+                  name={data.name}
+                  role={data.role}
+                  photo={data.photo}
+                  twitter={data.twitter}
+                  linkedin={data.linkedin}
+                  instagram={data.instagram}
+                />)}
+                
               </div>
             </div>
           </div>
@@ -79,27 +61,17 @@ function Team() {
 
               <div class="row align-items-center single-item">
 
-                <MemberCard
-                  name={"Sandesh P S"}
-                  role={"Advisor, Technology"}
-                  photo={sandesh}
-                  linkedin={"https://www.linkedin.com/in/sandesh-ps-ab975041/"}
-                  instagram={"https://twitter.com/sandeshps_1989"}
-                />
-                <MemberCard
-                  name={"Vinay Veerappaji"}
-                  role={"Software Engineer"}
-                  photo={vinay}
-                  linkedin={"https://www.linkedin.com/in/vinay-veerappaji/"}
-                  instagram={"https://www.instagram.com/vinay_veerappaji/"}
-                />
-                <MemberCard
-                  name={"Dharanee N"}
-                  role={"UI/UX Designer"}
-                  photo={dharee}
-                  instagram={"https://www.instagram.com/ddsohigh/"}
-                  linkedin={"https://linkedin.com/in/dharanee86"}
-                />
+              {HelpingHands.map(data=><MemberCard 
+                  key={data.id}
+                  name={data.name}
+                  role={data.role}
+                  photo={data.photo}
+                  twitter={data.twitter}
+                  linkedin={data.linkedin}
+                  instagram={data.instagram}
+                />)}
+
+                
               </div>
             </div>
           </div>

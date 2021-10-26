@@ -39,8 +39,10 @@ export const sharmi =
   "https://smart-diner.s3.ap-south-1.amazonaws.com/team/sharmi.jpg";
 export const sandesh =
   "https://smart-diner.s3.ap-south-1.amazonaws.com/team/sandesh.jpg";
-export const nithish = 
-  "https://smart-diner.s3.ap-south-1.amazonaws.com/team/nithish+kumar.png"
+export const devesh = 
+  "https://smart-diner.s3.ap-south-1.amazonaws.com/team/devesh.png";
+  export const sangeetha = 
+  "https://smart-diner.s3.ap-south-1.amazonaws.com/team/sangeetha.jpg";
 
 export const HomeBannerHeroImg =
   "https://smart-diner.s3.ap-south-1.amazonaws.com/landing+page/online_order_right_side_image.jpg";
