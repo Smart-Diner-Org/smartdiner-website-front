@@ -31,6 +31,15 @@ name:"Sangeetha",
 role:"Designer",
 photo:"https://smart-diner.s3.ap-south-1.amazonaws.com/team/sangeetha.jpg"
 }
+,
+{
+    id: 5,
+    name:"Karthik U M",
+    role:"Tech Intern",
+    photo:" https://smart-diner.s3.ap-south-1.amazonaws.com/team/karthik+um.jpg",
+    linkedin:"www.linkedin.com/in/karthik-um-7765561a1",
+    
+    }
 ]
 
 export default Members;
