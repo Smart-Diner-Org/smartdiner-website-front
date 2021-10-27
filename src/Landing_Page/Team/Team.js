@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import MemberCard from "./MemberCard";
 import { useLocation, Link } from "react-router-dom";
 import ReactGA from "react-ga";
-import { anushree, dharee, divya, sandesh, sharmi, vinay, nithish, karthik, swathi, karthik } from "../s3images";
+import { anushree, dharee, divya, sandesh, sharmi, vinay, nithish, karthik, swathi } from "../s3images";
 
 function Team() {
   const { pathname } = useLocation();
@@ -64,13 +64,6 @@ function Team() {
                   photo={nithish}
                   linkedin={"https://www.linkedin.com/in/nithish-kumar-1652ba18b/"}
                   instagram={"https://www.instagram.com/nithish_170/"}
-                />
-                 <MemberCard 
-                  name={"Karthik UM"}
-                  role={"Tech Intern"}
-                  photo={karthik}
-                  linkedin={"https://www.linkedin.com/in/karthik-um-7765561a1"}
-                 
                 />
               </div>
             </div>
